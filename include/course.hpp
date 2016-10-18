@@ -6,7 +6,6 @@
 class Course
 {
     private:
-        unsigned id;
         double units;
         std::string givenGrade;
         std::string scaleType;
@@ -18,7 +17,7 @@ class Course
 
     public:
         Course() = delete;
-        Course(unsigned idVal, double unitsVal, std::string givenGradeVal, std::string scaleTypeVal);
+        Course(double unitsVal, std::string givenGradeVal, std::string scaleTypeVal);
 };
 
 #endif

@@ -1,9 +1,11 @@
 #include "course.hpp"
+#include "file.hpp"
 #include "student.hpp"
 
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 
 int main(int argc, char* argv[])
 {
@@ -14,12 +16,10 @@ int main(int argc, char* argv[])
         return 0;
     } // unexpected number of arguments
 
-    std::string inputFileName = argv[1];
-    std::ifstream inputFile(inputFileName.c_str(), std::ifstream::in);
-    inputFile.close();
+    std::string inputFileName = argv[1], outputFileName = argv[2];
+    std::vector<Student> students;
 
-    std::string outputFileName = argv[2];
-    std::ofstream outputFile(outputFileName.c_str(), std::ofstream::out & std::ofstream::trunc);
-    outputFile.close();
+    parseCsv(inputFileName, students);
+    createOutput(outputFileName, students);
     return 0;
 } // main()
