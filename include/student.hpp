@@ -25,7 +25,7 @@ class Student
         Student(std::string idNumberVal, std::string typeVal, std::string scaleTypeVal);
 
         void addCourse(std::string units, std::string grade);
-
+        void convertClasses();
         double calculateGpa();
 };
 

@@ -25,7 +25,13 @@ void parseCsv(std::string inputFileName, std::vector<Student> &students)
         Student currentStudent(idNumber, type, scaleType);
 
         while(std::getline(parser, units, ','))
-        {
+        {  
+            // empty string implies blank cell, which can happen with differing amounts of classes
+            if(units == "")
+            {
+                break;
+            } // blank cell
+
             // eof right after the first getline means there is an odd number of cells parsed
             if(parser.eof())
             {

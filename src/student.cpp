@@ -12,6 +12,14 @@ void Student::addCourse(std::string units, std::string grade)
     courses.push_back(newCourse);
 } // Student::addCourse()
 
+void Student::convertClasses()
+{
+    for(auto iterator : courses)
+    {
+        iterator.convertToLetter();
+    }
+} // Student::convertClasses()
+
 // use the list of courses to calculate the final GPA
 double Student::calculateGpa()
 {

@@ -20,6 +20,13 @@ int main(int argc, char* argv[])
     std::vector<Student> students;
 
     parseCsv(inputFileName, students);
+
+    for(auto iterator : students)
+    {
+        iterator.convertClasses();
+        iterator.calculateGpa();
+    }
+
     createOutput(outputFileName, students);
     return 0;
 } // main()
