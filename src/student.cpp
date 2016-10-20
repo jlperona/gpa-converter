@@ -1,10 +1,26 @@
 #include "student.hpp"
 
 Student::Student(std::string idNumberVal, std::string typeVal, std::string scaleTypeVal)
-    : idNumber(idNumberVal), type(typeVal), scaleType(scaleTypeVal), finalGpa(0)
+    : idNumber(idNumberVal), type(typeVal), scaleType(scaleTypeVal),
+      gradePointSum(0), unitSum(0), finalGpa(0)
 {
     courses.clear();
 } // Student constructor
+
+std::string Student::getIdNumber()
+{
+    return idNumber;
+} // Student::getIdNumber()
+
+std::string Student::getType()
+{
+    return type;
+} // Student::getType()
+
+double Student::getFinalGpa()
+{
+    return finalGpa;
+} // Student::getFinalGpa()
 
 void Student::addCourse(std::string units, std::string grade)
 {
@@ -21,8 +37,23 @@ void Student::convertClasses()
 } // Student::convertClasses()
 
 // use the list of courses to calculate the final GPA
-double Student::calculateGpa()
+void Student::calculateGpa()
 {
-    // (TO DO)
-    return 0;
+    /* GPA formula, where c = class
+     * numerator = c1 units * c1 grade points + c2 units * c2 grade points + ...
+     * denominator = c1 units + c2 units + ...
+     * final GPA = numerator / denominator */
+
+    gradePointSum = 0;
+    unitSum = 0;
+    finalGpa = 0;
+
+    for(auto iterator : courses)
+    {
+
+        gradePointSum += iterator.getGradePoints() * iterator.getUnits();
+        unitSum += iterator.getUnits();
+    }
+
+    finalGpa = gradePointSum / unitSum;
 } // Student::calculateGpa()

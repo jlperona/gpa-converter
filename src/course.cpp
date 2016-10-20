@@ -2,7 +2,7 @@
 
 Course::Course(double unitsVal, std::string givenGradeVal, std::string scaleTypeVal)
     : units(unitsVal), givenGrade(givenGradeVal), scaleType(scaleTypeVal),
-      letterGrade(""), letterGradePoints(0), gradePointSum(0)
+      letterGrade(""), letterGradePoints(0)
 {
 
 } // Course constructor
@@ -19,7 +19,7 @@ void Course::convertToLetter()
     }
     else
     {
-        std::cout << "Unknown grade type scale " << scaleType << "." << std::endl
+        std::cout << "Unknown grade type scale '" << scaleType << "'." << std::endl
                   << "Check your data." << std::endl;
         exit(EXIT_FAILURE);
     }
@@ -27,69 +27,18 @@ void Course::convertToLetter()
     letterGradePoints = convertLetterTo4(letterGrade);
 } // Course::convertToLetter()
 
-/* All information for non-US grade conversion is taken from the following website:
- * foreigncredits.com/resources/grade-conversion
- * The US letter to number scale is widely known. */
-
-std::string convertIndia100(std::string input)
+double Course::getUnits()
 {
-    if(input == "G")
-    {
-        return "D";
-    }
+    return units;
+} // Course::getUnits()
 
-    double grade = -1;
-
-    try // attempt to convert this set
-    {
-        grade = std::stod(input);
-    }
-    catch(const std::invalid_argument &e)
-    {
-        std::cout << "Invalid grade '" << input << "' passed to India 100." << std::endl
-                  << "Check your data." << std::endl;
-        exit(EXIT_FAILURE);
-    } // invalid grade
-
-    if(grade >= 60 && grade <= 100)
-    {
-        return "A";
-    }
-    else if(grade >= 50 && grade < 60)
-    {
-        return "B";
-    }
-    else if(grade >= 40 && grade < 50)
-    {
-        return "C";
-    }
-    else if(grade >= 0 && grade < 40)
-    {
-        return "F";
-    }
-    else // invalid
-    {
-        std::cout << "Invalid grade '" << input << "' passed to India 100." << std::endl
-                  << "Check your data." << std::endl;
-        exit(EXIT_FAILURE);       
-    }
-} // convertIndia100()
-
-std::string convertIndia10(std::string input)
+double Course::getGradePoints()
 {
-   try // attempt to convert this set
-    {
-        double grade = std::stod(input);
-    }
-    catch(const std::invalid_argument &e)
-    {
-        std::cout << "Invalid grade '" << input << "' passed to India 10." << std::endl
-                  << "Check your data." << std::endl;
-        exit(EXIT_FAILURE);
-    } // invalid grade
-    return "";
-} // convertIndia10()
+    return letterGradePoints;
+} // Course::getGradePoints()
 
+// as this function is not used with given CSV data, it should never throw an error
+// assuming correct code, anyway
 double convertLetterTo4(std::string input)
 {
     double currentPoints = 0;
@@ -127,7 +76,11 @@ double convertLetterTo4(std::string input)
     } // singular letter grade
     else // plus or minus sign
     {
-        if(input[1] == '+')
+        if(input.length() != 2)
+        {
+            std::cout << "Unexpected grade '" << input << "'." << std::endl;
+        } // invalid
+        else if(input[1] == '+')
         {
             // an A+ is still a 4, not a 4.3
             currentPoints = std::min(4.0, currentPoints + 0.3);

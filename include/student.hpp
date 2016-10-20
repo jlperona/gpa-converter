@@ -13,9 +13,13 @@ class Student
         std::string idNumber;
         std::string type;
         std::string scaleType;
-        
+
         // filled from the CSV
         std::vector<Course> courses;
+
+        // used to calculate final gpa below
+        double gradePointSum; // numerator
+        double unitSum; // denominator
 
         // calculated using courses
         double finalGpa;
@@ -24,9 +28,13 @@ class Student
         Student() = delete;
         Student(std::string idNumberVal, std::string typeVal, std::string scaleTypeVal);
 
+        std::string getIdNumber();
+        std::string getType();
+        double getFinalGpa();
+
         void addCourse(std::string units, std::string grade);
         void convertClasses();
-        double calculateGpa();
+        void calculateGpa();
 };
 
 #endif

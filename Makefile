@@ -11,7 +11,8 @@ OBJ_DIR = ./obj
 SRC_DIR = ./src
 DAT_DIR = ./data
 
-OBJS = $(OBJ_DIR)/course.o \
+OBJS = $(OBJ_DIR)/conversion.o \
+	   $(OBJ_DIR)/course.o \
        $(OBJ_DIR)/file.o \
        $(OBJ_DIR)/main.o \
        $(OBJ_DIR)/student.o

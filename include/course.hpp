@@ -1,6 +1,8 @@
 #ifndef COURSE_HPP
 #define COURSE_HPP
 
+#include "conversion.hpp"
+
 #include <algorithm>
 #include <iostream>
 #include <string>
@@ -15,17 +17,16 @@ class Course
         std::string letterGrade;
         double letterGradePoints;
 
-        double gradePointSum;
-
     public:
         Course() = delete;
         Course(double unitsVal, std::string givenGradeVal, std::string scaleTypeVal);
 
+        double getUnits();
+        double getGradePoints();
+
         void convertToLetter();
 };
 
-std::string convertIndia100(std::string input);
-std::string convertIndia10(std::string input);
 double convertLetterTo4(std::string input);
 
 #endif

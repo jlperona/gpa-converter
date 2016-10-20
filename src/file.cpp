@@ -22,10 +22,17 @@ void parseCsv(std::string inputFileName, std::vector<Student> &students)
         std::getline(parser, type, ',');
         std::getline(parser, scaleType, ',');
 
+        if(parser.eof())
+        {
+            std::cout << "ERROR: Malformed data in first three columns." << std::endl
+                      << "Check your data." << std::endl;
+            exit(EXIT_FAILURE);
+        } // missing data in first 3 columns
+
         Student currentStudent(idNumber, type, scaleType);
 
         while(std::getline(parser, units, ','))
-        {  
+        {
             // empty string implies blank cell, which can happen with differing amounts of classes
             if(units == "")
             {
@@ -54,6 +61,12 @@ void parseCsv(std::string inputFileName, std::vector<Student> &students)
 void createOutput(std::string outputFileName, std::vector<Student> &students)
 {
     std::ofstream outputFile(outputFileName.c_str(), std::ofstream::out & std::ofstream::trunc);
+
+    for(auto iterator : students)
+    {
+        outputFile << iterator.getIdNumber() << " - " << iterator.getType() << std::endl
+                   << std::setprecision(3) << iterator.getFinalGpa() << std::endl << std::endl;
+    }
 
     outputFile.close();
 
