@@ -1,16 +1,20 @@
 #include "file.hpp"
 
 // parse through the given input CSV and place student data into vector
-void parseCsv(std::string inputFileName, std::vector<Student> &students)
+void parseCsv(std::string inputFileName, std::vector<Student> &students, bool noHeader)
 {
     std::ifstream inputFile(inputFileName.c_str(), std::ifstream::in);
 
     std::string currentLine, idNumber, type, scaleType;
     std::string units, grade;
 
-    // skip header line
-    // (TO DO) Allow for no header with flag
-    std::getline(inputFile, currentLine);
+    unsigned lineNumber = 1;
+
+    if(noHeader == false)
+    {
+        std::getline(inputFile, currentLine);
+        lineNumber++;
+    } // skip header line if specified
 
     while(std::getline(inputFile, currentLine))
     {
@@ -24,8 +28,8 @@ void parseCsv(std::string inputFileName, std::vector<Student> &students)
 
         if(parser.eof())
         {
-            std::cout << "ERROR: Malformed data in first three columns." << std::endl
-                      << "Check your data." << std::endl;
+            std::cerr << "ERROR: Malformed data in first three columns of line "
+                      << lineNumber << "." << std::endl;
             exit(EXIT_FAILURE);
         } // missing data in first 3 columns
 
@@ -42,8 +46,8 @@ void parseCsv(std::string inputFileName, std::vector<Student> &students)
             // eof right after the first getline means there is an odd number of cells parsed
             if(parser.eof())
             {
-                std::cout << "ERROR: Odd number of class data for student " << idNumber << "." << std::endl
-                          << "Check your data." << std::endl;
+                std::cerr << "ERROR: Odd number of class data for student "
+                          << idNumber << "." << std::endl;
                 exit(EXIT_FAILURE);
             } // odd number of cells
 
@@ -53,6 +57,7 @@ void parseCsv(std::string inputFileName, std::vector<Student> &students)
         } // for unknown number of tokens left in line
 
         students.push_back(currentStudent);
+        lineNumber++;
     } // per line
 
     inputFile.close();

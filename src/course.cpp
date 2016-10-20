@@ -19,7 +19,7 @@ void Course::convertToLetter()
     }
     else
     {
-        std::cout << "Unknown grade type scale '" << scaleType << "'." << std::endl
+        std::cerr << "ERROR: Unknown grade type scale '" << scaleType << "'." << std::endl
                   << "Check your data." << std::endl;
         exit(EXIT_FAILURE);
     }
@@ -66,7 +66,8 @@ double convertLetterTo4(std::string input)
     } // no qualifiers for an F
     else // unexpected symbol
     {
-        std::cout << "Unexpected symbol '" << input[0] << "' in letter grade." << std::endl;
+        std::cerr << "ERROR: Unexpected symbol '" << input[0]
+                  << "' in letter grade '" << input << "'." << std::endl;
         exit(EXIT_FAILURE);
     }
 
@@ -78,7 +79,9 @@ double convertLetterTo4(std::string input)
     {
         if(input.length() != 2)
         {
-            std::cout << "Unexpected grade '" << input << "'." << std::endl;
+            std::cerr << "ERROR: Unexpected symbol '" << input[1]
+                      << "' in letter grade '" << input << "'." << std::endl;
+            exit(EXIT_FAILURE);
         } // invalid
         else if(input[1] == '+')
         {
@@ -91,7 +94,8 @@ double convertLetterTo4(std::string input)
         }
         else // unexpected symbol
         {
-            std::cout << "Unexpected symbol '" << input[1] << "' in letter grade." << std::endl;
+            std::cerr << "ERROR: Unexpected symbol '" << input[1]
+                      << "' in letter grade '" << input << "'." << std::endl;
             exit(EXIT_FAILURE);
         }
     }

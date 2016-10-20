@@ -18,8 +18,7 @@ std::string convertIndia100(std::string input)
     }
     catch(const std::invalid_argument &e)
     {
-        std::cout << "Invalid grade '" << input << "' passed to India 100." << std::endl
-                  << "Check your data." << std::endl;
+        std::cerr << "ERROR: Invalid grade '" << input << "' in student using grade scale 'India 100'." << std::endl;
         exit(EXIT_FAILURE);
     } // invalid grade
 
@@ -41,8 +40,7 @@ std::string convertIndia100(std::string input)
     }
     else // invalid
     {
-        std::cout << "Invalid grade '" << input << "' passed to India 100." << std::endl
-                  << "Check your data." << std::endl;
+        std::cerr << "ERROR: Invalid grade '" << input << "' in student using grade scale 'India 100'." << std::endl;
         exit(EXIT_FAILURE);
     }
 } // convertIndia100()
@@ -57,8 +55,7 @@ std::string convertIndia10(std::string input)
     }
     catch(const std::invalid_argument &e)
     {
-        std::cout << "Invalid grade '" << input << "' passed to India 10." << std::endl
-                  << "Check your data." << std::endl;
+        std::cerr << "ERROR: Invalid grade '" << input << "' in student using grade scale 'India 10'." << std::endl;
         exit(EXIT_FAILURE);
     } // invalid grade
 
@@ -88,8 +85,7 @@ std::string convertIndia10(std::string input)
     }
     else // invalid
     {
-        std::cout << "Invalid grade '" << input << "' passed to India 10." << std::endl
-                  << "Check your data." << std::endl;
+        std::cerr << "ERROR: Invalid grade '" << input << "' in student using grade scale 'India 10'." << std::endl;
         exit(EXIT_FAILURE);
     }
 } // convertIndia10()

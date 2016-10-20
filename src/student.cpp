@@ -24,13 +24,25 @@ double Student::getFinalGpa()
 
 void Student::addCourse(std::string units, std::string grade)
 {
-    Course newCourse(std::stod(units), grade, scaleType);
+    double convertedUnits = 0;
+    try // attempt to convert
+    {
+        convertedUnits = std::stod(units);
+    }
+    catch(const std::invalid_argument &e)
+    {
+        std::cerr << "Invalid unit count '" << units << "' for student ID '" << idNumber << "'." << std::endl
+                  << "Check your data." << std::endl;
+        exit(EXIT_FAILURE);
+    } // invalid
+
+    Course newCourse(convertedUnits, grade, scaleType);
     courses.push_back(newCourse);
 } // Student::addCourse()
 
 void Student::convertClasses()
 {
-    for(auto iterator : courses)
+    for(auto &iterator : courses)
     {
         iterator.convertToLetter();
     }
@@ -50,7 +62,6 @@ void Student::calculateGpa()
 
     for(auto iterator : courses)
     {
-
         gradePointSum += iterator.getGradePoints() * iterator.getUnits();
         unitSum += iterator.getUnits();
     }
