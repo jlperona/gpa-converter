@@ -7,17 +7,17 @@ Student::Student(std::string idNumberVal, std::string typeVal, std::string scale
     courses.clear();
 } // Student constructor
 
-std::string Student::getIdNumber()
+std::string Student::getIdNumber() const
 {
     return idNumber;
 } // Student::getIdNumber()
 
-std::string Student::getType()
+std::string Student::getType() const
 {
     return type;
 } // Student::getType()
 
-double Student::getFinalGpa()
+double Student::getFinalGpa() const
 {
     return finalGpa;
 } // Student::getFinalGpa()
@@ -60,7 +60,7 @@ void Student::calculateGpa()
     unitSum = 0;
     finalGpa = 0;
 
-    for(auto iterator : courses)
+    for(auto const &iterator : courses)
     {
         gradePointSum += iterator.getGradePoints() * iterator.getUnits();
         unitSum += iterator.getUnits();

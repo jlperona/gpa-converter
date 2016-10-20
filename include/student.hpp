@@ -28,9 +28,9 @@ class Student
         Student() = delete;
         Student(std::string idNumberVal, std::string typeVal, std::string scaleTypeVal);
 
-        std::string getIdNumber();
-        std::string getType();
-        double getFinalGpa();
+        std::string getIdNumber() const;
+        std::string getType() const;
+        double getFinalGpa() const;
 
         void addCourse(std::string units, std::string grade);
         void convertClasses();

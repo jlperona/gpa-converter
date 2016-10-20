@@ -67,10 +67,10 @@ void createOutput(std::string outputFileName, std::vector<Student> &students)
 {
     std::ofstream outputFile(outputFileName.c_str(), std::ofstream::out & std::ofstream::trunc);
 
-    for(auto iterator : students)
+    for(auto const &iterator : students)
     {
         outputFile << iterator.getIdNumber() << " - " << iterator.getType() << std::endl
-                   << std::setprecision(3) << iterator.getFinalGpa() << std::endl << std::endl;
+                   << std::setprecision(4) << iterator.getFinalGpa() << std::endl << std::endl;
     }
 
     outputFile.close();

@@ -21,8 +21,8 @@ class Course
         Course() = delete;
         Course(double unitsVal, std::string givenGradeVal, std::string scaleTypeVal);
 
-        double getUnits();
-        double getGradePoints();
+        double getUnits() const;
+        double getGradePoints() const;
 
         void convertToLetter();
 };

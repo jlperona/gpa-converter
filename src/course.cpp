@@ -27,12 +27,12 @@ void Course::convertToLetter()
     letterGradePoints = convertLetterTo4(letterGrade);
 } // Course::convertToLetter()
 
-double Course::getUnits()
+double Course::getUnits() const
 {
     return units;
 } // Course::getUnits()
 
-double Course::getGradePoints()
+double Course::getGradePoints() const
 {
     return letterGradePoints;
 } // Course::getGradePoints()
