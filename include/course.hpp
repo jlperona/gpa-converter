@@ -50,7 +50,7 @@ class Course
          * \return The grade points for this class on the 4.0 grade scale.
          */
         double getGradePoints() const;
-        /*
+        /**
          * Take the grade from the given grade scale and convert it to US letter grade terms.
          */
         void convertToLetter();

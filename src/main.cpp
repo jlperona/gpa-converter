@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
     // Minimum of three command line arguments, with --no-header being optional.
     if(argc < 3 || argc > 4)
     {
-        std::cout << "usage: gpa-converter [--no-header] your.csv output.txt" << std::endl;
+        std::cout << "usage: gpa-converter [--no-header] input.csv output.txt" << std::endl;
         return 0;
     } // unexpected number of arguments
 

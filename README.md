@@ -1,2 +1,77 @@
 # gpa-converter
-Convert a CSV containing applicant transcript data into overall GPAs.
+
+A small C++ program to take in student transcript data via CSV format, and convert it to a final GPA in the United States' 4.0 grading scale.
+
+## Building
+
+Use your favorite C++ compiler to build. No other libraries are necessary.
+
+The documentation uses Doxygen, and building it is as easy as
+
+    doxygen
+
+## Usage
+
+    gpa-converter [--no-header] input.csv output.txt
+
+The input CSV file needs to look as so:
+
+    Header row will be ignored
+    Student 1 ID Number, Secondary Identifier, Grade Scale Type, Class 1 Units, Class 1 Grade, Class 2 Units, Class 2 Grade, ...
+    Student 2 ID Number, Secondary Identifier, Grade Scale Type, ...
+    ...
+
+Use `--no-header` if your data does not have a header row.
+
+The output file will be overwritten with the final GPA data. The ID number and secondary identifier can be anything. I use the secondary identifier to separate multiple transcripts for the same student.
+
+### Grade Scales
+
+All grade scale conversions are credited to [ForeignCredits](http://www.foreigncredits.com/Resources/Grade-Conversion/). The following grade scales have been implemented:
+
+* `India 100`
+    * The most common grading scale in India.
+* `India 10`
+    * The UGC 10 point scale used in India. Currently supports number grades only.
+
+The appropriate string above goes in the *Grade Scale Type* column for each student.
+
+More will be added as I encounter them. If you have any that you would like to add, feel free to make a [pull request](https://github.com/jlperona/gpa-converter/pulls).
+
+## Motivation
+
+This was designed for personal use. Some sort of conversion needs to be done for non-US GPAs in order to be able to make fair comparisons between students. In the past, what was done at my workplace was:
+
+1. Take student transcript data
+2. Input it into a web app
+3. Calculate the student's GPA
+4. Print out the web app page
+
+This seemed inefficient. This app helps speed the process along.
+
+### Benefits
+
+* Data entry is easier
+    * It's much easier to use your favorite spreadsheet editor to enter data than using a web app
+* Data is saved to CSV
+    * Parsing is easy
+    * Can be uploaded to a cloud storage website, rather than printing them out
+* Open source
+    * Code easily checked for errors rather than relying on the programming of a web app
+
+### Drawbacks
+
+* Data is saved to CSV
+    * Not the most elegant format to use
+    * Data used shouldn't contain quotes, newlines, or commas, which makes the choice of CSV *okay*
+* Doesn't fix the time spent on data entry
+    * It only helps speed it up
+
+## Future
+
+Some of my future goals for this program:
+
+* Make the CSV parsing more robust
+    * Deal with quotes that are used to wrap cells
+* Add more grade scales
+    * Ones from China, especially
