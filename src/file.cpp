@@ -1,6 +1,9 @@
+/**
+ * \file file.cpp This file contains implementation details for the file functions.
+ */
+
 #include "file.hpp"
 
-// parse through the given input CSV and place student data into vector
 void parseCsv(std::string inputFileName, std::vector<Student> &students, bool noHeader)
 {
     std::ifstream inputFile(inputFileName.c_str(), std::ifstream::in);
@@ -20,8 +23,7 @@ void parseCsv(std::string inputFileName, std::vector<Student> &students, bool no
     {
         std::stringstream parser(currentLine);
 
-        // parse through first 3 guaranteed columns
-
+        // Parse through first 3 guaranteed columns.
         std::getline(parser, idNumber, ',');
         std::getline(parser, type, ',');
         std::getline(parser, scaleType, ',');
@@ -37,13 +39,13 @@ void parseCsv(std::string inputFileName, std::vector<Student> &students, bool no
 
         while(std::getline(parser, units, ','))
         {
-            // empty string implies blank cell, which can happen with differing amounts of classes
+            // Empty string implies blank cell, which can happen with differing amounts of classes.
             if(units == "")
             {
                 break;
             } // blank cell
 
-            // eof right after the first getline means there is an odd number of cells parsed
+            // EOF right after the first getline means there is an odd number of cells parsed.
             if(parser.eof())
             {
                 std::cerr << "ERROR: Odd number of class data for student "

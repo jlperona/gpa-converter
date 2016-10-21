@@ -1,18 +1,19 @@
-#include "conversion.hpp"
+/**
+ * \file conversion.cpp This file contains implementation details for the conversion functions.
+ */
 
-/* All information for non-US grade conversion is taken from the following website:
- * foreigncredits.com/resources/grade-conversion */
+#include "conversion.hpp"
 
 std::string convertIndia100(std::string input)
 {
     if(input == "G")
     {
         return "D";
-    }
+    } // handle non-number first
 
     double grade = -1;
 
-    try // attempt to convert this grade
+    try // attempt to convert to number
     {
         grade = std::stod(input);
     }
@@ -49,7 +50,7 @@ std::string convertIndia10(std::string input)
 {
     double grade = -1;
 
-    try // attempt to convert this grade
+    try // attempt to convert to number
     {
         grade = std::stod(input);
     }

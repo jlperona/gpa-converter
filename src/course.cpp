@@ -1,3 +1,8 @@
+/**
+ * \file course.cpp This file contains implementation details for the Course class,
+ * as well as the letter grade to 4.0 grade point scale converter.
+ */
+
 #include "course.hpp"
 
 Course::Course(double unitsVal, std::string givenGradeVal, std::string scaleTypeVal)
@@ -19,8 +24,7 @@ void Course::convertToLetter()
     }
     else
     {
-        std::cerr << "ERROR: Unknown grade type scale '" << scaleType << "'." << std::endl
-                  << "Check your data." << std::endl;
+        std::cerr << "ERROR: Unknown grade type scale '" << scaleType << "'." << std::endl;
         exit(EXIT_FAILURE);
     }
 
@@ -37,13 +41,11 @@ double Course::getGradePoints() const
     return letterGradePoints;
 } // Course::getGradePoints()
 
-// as this function is not used with given CSV data, it should never throw an error
-// assuming correct code, anyway
 double convertLetterTo4(std::string input)
 {
     double currentPoints = 0;
 
-    // handle letter grades first
+    // Handle letter grades first.
     if(input[0] == 'A')
     {
         currentPoints = 4;
