@@ -67,7 +67,14 @@ void parseCsv(std::string inputFileName, std::vector<Student> &students, bool no
 
 void createOutput(std::string outputFileName, std::vector<Student> &students)
 {
+    if(students.empty())
+    {
+        std::cout << "No data found in input file." << std::endl;
+        return;
+    } // no data at all
+
     std::ofstream outputFile(outputFileName.c_str(), std::ofstream::out & std::ofstream::trunc);
+
 
     for(auto const &iterator : students)
     {

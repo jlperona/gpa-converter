@@ -4,7 +4,7 @@ A small C++ program to take in student transcript data via CSV format, and conve
 
 ## Building
 
-Use your favorite C++ compiler to build. No other libraries are necessary.
+Compile with `make`. No other libraries are necessary. If you'd like to change the compiler, edit the `CXX` variable in the Makefile.
 
 The documentation uses Doxygen, and building it is as easy as
 
