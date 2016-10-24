@@ -22,6 +22,14 @@ void Course::convertToLetter()
     {
         letterGrade = convertIndia10(givenGrade);
     }
+    else if(scaleType == "China")
+    {
+        letterGrade = convertChina(givenGrade);
+    }
+    else if(scaleType == "United States")
+    {
+        letterGrade = convertUnitedStates(givenGrade);
+    }
     else
     {
         std::cerr << "ERROR: Unknown grade type scale '" << scaleType << "'." << std::endl;

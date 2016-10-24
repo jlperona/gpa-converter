@@ -35,7 +35,7 @@ void Student::addCourse(std::string units, std::string grade)
     }
     catch(const std::invalid_argument &e)
     {
-        std::cerr << "ERROR: FInvalid unit count '" << units << "' for student ID '" << idNumber << "'." << std::endl;
+        std::cerr << "ERROR: Invalid unit count '" << units << "' for student ID '" << idNumber << "'." << std::endl;
         exit(EXIT_FAILURE);
     } // invalid
 

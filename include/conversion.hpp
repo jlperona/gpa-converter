@@ -11,6 +11,19 @@
 #include <string>
 
 /**
+ * Convert a United States letter grade. Note that since there is a routine to do this already,
+ * this function is limited to verification of inputted grades.
+ * \param input The input grade, expected to be between 0 - 100.
+ * \return The US letter grade equivalent.
+ */
+std::string convertUnitedStates(std::string input);
+/**
+ * Convert the most common scale in China, the 100 point scale.
+ * \param input The input grade, expected to be between 0 - 100.
+ * \return The US letter grade equivalent.
+ */
+std::string convertChina(std::string input);
+/**
  * Convert the most common scale in India, the 100 point scale.
  * \param input The input grade, expected to be between 0 - 100 or 'G'.
  * \return The US letter grade equivalent.

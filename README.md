@@ -29,10 +29,14 @@ The output file will be overwritten with the final GPA data. The ID number and s
 
 All grade scale conversions are credited to [ForeignCredits](http://www.foreigncredits.com/Resources/Grade-Conversion/). The following grade scales have been implemented:
 
+* `China`
+    * The most common grading scale in China, the 100 point scale.
 * `India 100`
-    * The most common grading scale in India.
+    * The most common grading scale in India, the 100 point scale.
 * `India 10`
     * The UGC 10 point scale used in India. Currently supports number grades only.
+* `United States`
+    * United States letter grades.
 
 The appropriate string above goes in the *Grade Scale Type* column for each student.
 
@@ -73,5 +77,4 @@ Some of my future goals for this program:
 
 * Make the CSV parsing more robust
     * Deal with quotes that are used to wrap cells
-* Add more grade scales
-    * Ones from China, especially
+* Add more grade scales as I encounter them
