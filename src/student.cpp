@@ -25,6 +25,11 @@ double Student::getFinalGpa() const
     return finalGpa;
 } // Student::getFinalGpa()
 
+double Student::getUnitSum() const
+{
+    return unitSum;
+} // Student::getUnitSum()
+
 void Student::addCourse(std::string units, std::string grade)
 {
     double convertedUnits = 0;

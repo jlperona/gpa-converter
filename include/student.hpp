@@ -59,6 +59,11 @@ class Student
          */
         double getFinalGpa() const;
         /**
+         * Getter function for the student's total unit sum.
+         * \return The student's unit sum.
+         */
+        double getUnitSum() const;
+        /**
          * Add a course to the student's Course vector. The scale type is taken from the Student caller.
          * \param units The number of units this course gives.
          * \param grade The grade that the student got, in the original grading scale.

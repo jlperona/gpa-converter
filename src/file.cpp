@@ -79,7 +79,8 @@ void createOutput(std::string outputFileName, std::vector<Student> &students)
     for(auto const &iterator : students)
     {
         outputFile << iterator.getIdNumber() << " - " << iterator.getType() << std::endl
-                   << std::setprecision(4) << iterator.getFinalGpa() << std::endl << std::endl;
+                   << std::setprecision(3) << std::fixed << "GPA: " << iterator.getFinalGpa() << ", Units: "
+                   << iterator.getUnitSum() << std::endl << std::endl;
     }
 
     outputFile.close();
