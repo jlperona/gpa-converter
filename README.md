@@ -1,6 +1,6 @@
 # gpa-converter
 
-A small C++ program to take in student transcript data via CSV format, and convert it to a final GPA in the United States' 4.0 grading scale.
+A C++ program to take in student transcript data via CSV format, and convert it to a final GPA in the United States' 4.0 grading scale.
 
 ## Building
 
@@ -76,5 +76,12 @@ This seemed inefficient. This app helps speed the process along.
 Some of my future goals for this program:
 
 * Make the CSV parsing more robust
-    * Deal with quotes that are used to wrap cells
+    * Deal with quotes that are used to wrap cells with commas in them
+        * This may not be needed as cells shouldn't need to contain commas to begin with
+    * Find out how to deal with line endings from both Windows and Unix
+        * May not need to deal with this as it really shouldn't be the program's problem
 * Add more grade scales as I encounter them
+    * Potentially alias `Taiwan` as `United States` due to the ones I've encountered
+        * Unless more Taiwanese transcripts come in with their separate scale
+    * Consider adding several from India for letter grades
+        * There is so much variation in these that I'm not entirely sure if it's worth it unless I start determining a pattern
