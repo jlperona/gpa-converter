@@ -132,23 +132,23 @@ std::string convertIndia10(std::string input)
     {
         return "A";
     }
-    else if (grade >= 8 && grade < 9)
+    else if(grade >= 8 && grade < 9)
     {
         return "B+";
     }
-    else if (grade >= 7 && grade < 8)
+    else if(grade >= 7 && grade < 8)
     {
         return "B";
     }
-    else if (grade >= 6 && grade < 7)
+    else if(grade >= 6 && grade < 7)
     {
         return "B-";
     }
-    else if (grade >= 4 && grade < 6)
+    else if(grade >= 4 && grade < 6)
     {
         return "C";
     }
-    else if (grade >= 0 && grade < 4)
+    else if(grade >= 0 && grade < 4)
     {
         return "F";
     }
@@ -158,3 +158,48 @@ std::string convertIndia10(std::string input)
         exit(EXIT_FAILURE);
     }
 } // convertIndia10()
+
+std::string convertSwitzerland6(std::string input)
+{
+    double grade = -1;
+
+    try // attempt to convert to number
+    {
+        grade = std::stod(input);
+    }
+    catch(const std::invalid_argument &e)
+    {
+        std::cerr << "ERROR: Invalid grade '" << input << "' in student using grade scale 'Switzerland 6'." << std::endl;
+        exit(EXIT_FAILURE);
+    } // invalid grade
+
+    if(grade == 6)
+    {
+        return "A";
+    }
+    else if(grade >= 5.5 && grade < 6)
+    {
+        return "A-";
+    }
+    else if(grade >= 5 && grade < 5.5)
+    {
+        return "B+";
+    }
+    else if(grade >= 4.5 && grade < 5)
+    {
+        return "B";
+    }
+    else if(grade >= 4 && grade < 4.5)
+    {
+        return "C";
+    }
+    else if(grade >= 0 && grade < 4)
+    {
+        return "F";
+    }
+    else // invalid
+    {
+        std::cerr << "ERROR: Invalid grade '" << input << "' in student using grade scale 'Switzerland 6'." << std::endl;
+        exit(EXIT_FAILURE);
+    }
+} // convertSwitzerland6()

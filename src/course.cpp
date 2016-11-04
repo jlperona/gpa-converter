@@ -30,6 +30,10 @@ void Course::convertToLetter()
     {
         letterGrade = convertUnitedStates(givenGrade);
     }
+    else if(scaleType == "Switzerland 6")
+    {
+        letterGrade = convertSwitzerland6(givenGrade);
+    }
     else
     {
         std::cerr << "ERROR: Unknown grade type scale '" << scaleType << "'." << std::endl;

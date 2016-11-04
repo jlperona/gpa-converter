@@ -36,5 +36,11 @@ std::string convertIndia100(std::string input);
  * \return The US letter grade equivalent.
  */
 std::string convertIndia10(std::string input);
+/**
+ * Convert the most common scale in Switzerland, the 6 point scale.
+ * \param input The input grade, expected to be between 0 - 6.
+ * \return The US letter grade equivalent.
+ */
+std::string convertSwitzerland6(std::string input);
 
 #endif

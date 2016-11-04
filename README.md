@@ -35,8 +35,10 @@ All grade scale conversions are credited to [ForeignCredits](http://www.foreignc
     * The most common grading scale in India, the 100 point scale.
 * `India 10`
     * The UGC 10 point scale used in India. Currently supports number grades only.
+* `Switzerland 6`
+    * The most common grading scale in Switzerland, the 6 point scale.
 * `United States`
-    * United States letter grades.
+    * United States letter grades. Also can convert the 4.3 grade scale commonly used in Taiwan and China.
 
 The appropriate string above goes in the *Grade Scale Type* column for each student.
 
