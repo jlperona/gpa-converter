@@ -6,15 +6,13 @@ A C++ program to take in student transcript data via CSV format, and convert it 
 
 Compile with `make`. No other libraries are necessary. If you'd like to change the compiler, edit the `CXX` variable in the Makefile.
 
-The documentation uses Doxygen, and building it is as easy as
-
-    doxygen
+The documentation uses Doxygen. Install it using your package manager. Building the documentation is as easy as `doxygen`.
 
 ## Usage
 
     gpa-converter [--no-header] input.csv output.txt
 
-The input CSV file needs to look as so:
+The input CSV file should not contain commas in the data fields, as this adds quotes into each field. The format of the file should look like this:
 
     Header row will be ignored
     Student 1 ID Number, Secondary Identifier, Grade Scale Type, Class 1 Units, Class 1 Grade, Class 2 Units, Class 2 Grade, ...
@@ -31,14 +29,16 @@ All grade scale conversions are credited to [ForeignCredits](http://www.foreignc
 
 * `China`
     * The most common grading scale in China, the 100 point scale.
+* `India 10`
+    * The UGC 10 point scale used in India.
 * `India 100`
     * The most common grading scale in India, the 100 point scale.
-* `India 10`
-    * The UGC 10 point scale used in India. Currently supports number grades only.
+* `Saudi Arabia 5`
+    * The 5 point scale used in Saudi Arabia.
 * `Switzerland 6`
     * The most common grading scale in Switzerland, the 6 point scale.
-* `United States`
-    * United States letter grades. Also can convert the 4.3 grade scale commonly used in Taiwan and China.
+* `United States` or `Taiwan`
+    * United States letter grades. This scale also can convert the 4.3 grade scale commonly used in Taiwan and China.
 
 The appropriate string above goes in the *Grade Scale Type* column for each student.
 
@@ -72,6 +72,7 @@ This seemed inefficient. This app helps speed the process along.
     * Data used shouldn't contain quotes, newlines, or commas, which makes the choice of CSV *okay*
 * Doesn't fix the time spent on data entry
     * It only helps speed it up
+    * Programmatically determining grades and credit hours would require OCR
 
 ## Future
 
@@ -80,10 +81,4 @@ Some of my future goals for this program:
 * Make the CSV parsing more robust
     * Deal with quotes that are used to wrap cells with commas in them
         * This may not be needed as cells shouldn't need to contain commas to begin with
-    * Find out how to deal with line endings from both Windows and Unix
-        * May not need to deal with this as it really shouldn't be the program's problem
 * Add more grade scales as I encounter them
-    * Potentially alias `Taiwan` as `United States` due to the ones I've encountered
-        * Unless more Taiwanese transcripts come in with their separate scale
-    * Consider adding several from India for letter grades
-        * There is so much variation in these that I'm not entirely sure if it's worth it unless I start determining a pattern

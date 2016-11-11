@@ -4,34 +4,14 @@
 
 #include "conversion.hpp"
 
-std::string convertUnitedStates(std::string input)
+void throwInvalidGradeError(std::string input, std::string gradeScale)
 {
-    // length of input should only be one or two, example "A" or "A-"
-    if(!(input.length() == 1 || input.length() == 2))
-    {
-        std::cerr << "ERROR: Invalid grade '" << input << "' in student using grade scale 'United States'." << std::endl;
-        exit(EXIT_FAILURE);
-    }
+    std::cerr << "ERROR: Invalid grade '" << input << "' in student using grade scale '"
+              << gradeScale << "'." << std::endl;
+    exit(EXIT_FAILURE);
+} // throwInvalidGradeError()
 
-    if(!(input[0] == 'A' || input[0] == 'B' || input[0] == 'C' || input[0] == 'D'|| input[0] == 'F'))
-    {
-        std::cerr << "ERROR: Invalid grade '" << input << "' in student using grade scale 'United States'." << std::endl;
-        exit(EXIT_FAILURE);
-    } // first letter unexpected
-
-    if(input.length() == 2)
-    {
-        if(!(input[1] == '+' || input[1] == '-'))
-        {
-            std::cerr << "ERROR: Invalid grade '" << input << "' in student using grade scale 'United States'." << std::endl;
-            exit(EXIT_FAILURE);
-        }
-    } // plus or minus sign
-
-    return input;
-} // convertUnitedStates()
-
-std::string convertChina(std::string input)
+std::string convertChina(std::string input, std::string gradeScale)
 {
     double grade = -1;
 
@@ -41,8 +21,7 @@ std::string convertChina(std::string input)
     }
     catch(const std::invalid_argument &e)
     {
-        std::cerr << "ERROR: Invalid grade '" << input << "' in student using grade scale 'China'." << std::endl;
-        exit(EXIT_FAILURE);
+        throwInvalidGradeError(input, gradeScale);
     } // invalid grade
 
     if(grade >= 90 && grade <= 100)
@@ -67,54 +46,13 @@ std::string convertChina(std::string input)
     }
     else // invalid
     {
-        std::cerr << "ERROR: Invalid grade '" << input << "' in student using grade scale 'China'." << std::endl;
-        exit(EXIT_FAILURE);
+        throwInvalidGradeError(input, gradeScale);
     }
+
+    exit(EXIT_FAILURE);
 } // convertChina()
 
-std::string convertIndia100(std::string input)
-{
-    if(input == "G")
-    {
-        return "D";
-    } // handle non-number first
-
-    double grade = -1;
-
-    try // attempt to convert to number
-    {
-        grade = std::stod(input);
-    }
-    catch(const std::invalid_argument &e)
-    {
-        std::cerr << "ERROR: Invalid grade '" << input << "' in student using grade scale 'India 100'." << std::endl;
-        exit(EXIT_FAILURE);
-    } // invalid grade
-
-    if(grade >= 60 && grade <= 100)
-    {
-        return "A";
-    }
-    else if(grade >= 50 && grade < 60)
-    {
-        return "B";
-    }
-    else if(grade >= 40 && grade < 50)
-    {
-        return "C";
-    }
-    else if(grade >= 0 && grade < 40)
-    {
-        return "F";
-    }
-    else // invalid
-    {
-        std::cerr << "ERROR: Invalid grade '" << input << "' in student using grade scale 'India 100'." << std::endl;
-        exit(EXIT_FAILURE);
-    }
-} // convertIndia100()
-
-std::string convertIndia10(std::string input)
+std::string convertIndia10(std::string input, std::string gradeScale)
 {
     double grade = -1;
 
@@ -124,8 +62,7 @@ std::string convertIndia10(std::string input)
     }
     catch(const std::invalid_argument &e)
     {
-        std::cerr << "ERROR: Invalid grade '" << input << "' in student using grade scale 'India 10'." << std::endl;
-        exit(EXIT_FAILURE);
+        throwInvalidGradeError(input, gradeScale);
     } // invalid grade
 
     if(grade >= 9 && grade <= 10)
@@ -154,12 +91,105 @@ std::string convertIndia10(std::string input)
     }
     else // invalid
     {
-        std::cerr << "ERROR: Invalid grade '" << input << "' in student using grade scale 'India 10'." << std::endl;
-        exit(EXIT_FAILURE);
+        throwInvalidGradeError(input, gradeScale);
     }
+
+    exit(EXIT_FAILURE);
 } // convertIndia10()
 
-std::string convertSwitzerland6(std::string input)
+std::string convertIndia100(std::string input, std::string gradeScale)
+{
+    if(input == "G")
+    {
+        return "D";
+    } // handle non-number first
+
+    double grade = -1;
+
+    try // attempt to convert to number
+    {
+        grade = std::stod(input);
+    }
+    catch(const std::invalid_argument &e)
+    {
+        throwInvalidGradeError(input, gradeScale);
+    } // invalid grade
+
+    if(grade >= 60 && grade <= 100)
+    {
+        return "A";
+    }
+    else if(grade >= 50 && grade < 60)
+    {
+        return "B";
+    }
+    else if(grade >= 40 && grade < 50)
+    {
+        return "C";
+    }
+    else if(grade >= 0 && grade < 40)
+    {
+        return "F";
+    }
+    else // invalid
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    exit(EXIT_FAILURE);
+} // convertIndia100()
+
+std::string convertSaudiArabia5(std::string input, std::string gradeScale)
+{
+    if(input == "A+")
+    {
+        return "A+";
+    }
+    else if(input == "A")
+    {
+        return "A";
+    }
+    else if(input == "B+")
+    {
+        return "A-";
+    }
+    else if(input == "B")
+    {
+        return "B+";
+    }
+    else if(input == "C+")
+    {
+        return "B";
+    }
+    else if(input == "C")
+    {
+        return "B-";
+    }
+    else if(input == "D+")
+    {
+        return "C+";
+    }
+    else if(input == "D")
+    {
+        return "C";
+    }
+    else if(input == "FN")
+    {
+        return "F";
+    }
+    else if(input == "DN")
+    {
+        return "F";
+    }
+    else
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    exit(EXIT_FAILURE);
+} // convertSaudiArabia5()
+
+std::string convertSwitzerland6(std::string input, std::string gradeScale)
 {
     double grade = -1;
 
@@ -169,8 +199,7 @@ std::string convertSwitzerland6(std::string input)
     }
     catch(const std::invalid_argument &e)
     {
-        std::cerr << "ERROR: Invalid grade '" << input << "' in student using grade scale 'Switzerland 6'." << std::endl;
-        exit(EXIT_FAILURE);
+        throwInvalidGradeError(input, gradeScale);
     } // invalid grade
 
     if(grade == 6)
@@ -199,7 +228,32 @@ std::string convertSwitzerland6(std::string input)
     }
     else // invalid
     {
-        std::cerr << "ERROR: Invalid grade '" << input << "' in student using grade scale 'Switzerland 6'." << std::endl;
-        exit(EXIT_FAILURE);
+        throwInvalidGradeError(input, gradeScale);
     }
+
+    exit(EXIT_FAILURE);
 } // convertSwitzerland6()
+
+std::string convertUnitedStates(std::string input, std::string gradeScale)
+{
+    // length of input should only be one or two, example "A" or "A-"
+    if(!(input.length() == 1 || input.length() == 2))
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    if(!(input[0] == 'A' || input[0] == 'B' || input[0] == 'C' || input[0] == 'D'|| input[0] == 'F'))
+    {
+        throwInvalidGradeError(input, gradeScale);
+    } // first letter unexpected
+
+    if(input.length() == 2)
+    {
+        if(!(input[1] == '+' || input[1] == '-'))
+        {
+            throwInvalidGradeError(input, gradeScale);
+        }
+    } // plus or minus sign
+
+    return input;
+} // convertUnitedStates()

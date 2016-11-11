@@ -14,25 +14,29 @@ Course::Course(double unitsVal, std::string givenGradeVal, std::string scaleType
 
 void Course::convertToLetter()
 {
-    if(scaleType == "India 100")
+    if(scaleType == "China")
     {
-        letterGrade = convertIndia100(givenGrade);
+        letterGrade = convertChina(givenGrade, scaleType);
     }
     else if(scaleType == "India 10")
     {
-        letterGrade = convertIndia10(givenGrade);
+        letterGrade = convertIndia10(givenGrade, scaleType);
     }
-    else if(scaleType == "China")
+    else if(scaleType == "India 100")
     {
-        letterGrade = convertChina(givenGrade);
+        letterGrade = convertIndia100(givenGrade, scaleType);
     }
-    else if(scaleType == "United States")
+    else if(scaleType == "Saudi Arabia 5")
     {
-        letterGrade = convertUnitedStates(givenGrade);
+        letterGrade = convertSaudiArabia5(givenGrade, scaleType);
     }
     else if(scaleType == "Switzerland 6")
     {
-        letterGrade = convertSwitzerland6(givenGrade);
+        letterGrade = convertSwitzerland6(givenGrade, scaleType);
+    }
+    else if(scaleType == "United States" || scaleType == "Taiwan")
+    {
+        letterGrade = convertUnitedStates(givenGrade, scaleType);
     }
     else
     {
@@ -93,8 +97,7 @@ double convertLetterTo4(std::string input)
     {
         if(input.length() != 2)
         {
-            std::cerr << "ERROR: Unexpected symbol '" << input[1]
-                      << "' in letter grade '" << input << "'." << std::endl;
+            std::cerr << "ERROR: Unexpected letter grade '" << input << "'." << std::endl;
             exit(EXIT_FAILURE);
         } // invalid
         else if(input[1] == '+')
