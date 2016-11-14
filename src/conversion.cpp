@@ -11,6 +11,51 @@ void throwInvalidGradeError(std::string input, std::string gradeScale)
     exit(EXIT_FAILURE);
 } // throwInvalidGradeError()
 
+std::string convertBangladesh(std::string input, std::string gradeScale)
+{
+    double grade = -1;
+
+    try // attempt to convert to number
+    {
+        grade = std::stod(input);
+    }
+    catch(const std::invalid_argument &e)
+    {
+        throwInvalidGradeError(input, gradeScale);
+    } // invalid grade
+
+    if(grade >= 60 && grade <= 100)
+    {
+        return "A";
+    }
+    else if(grade >= 55 && grade < 60)
+    {
+        return "B+";
+    }
+    else if(grade >= 50 && grade < 55)
+    {
+        return "B";
+    }
+    else if(grade >= 43 && grade < 50)
+    {
+        return "C+";
+    }
+    else if(grade >= 35 && grade < 43)
+    {
+        return "C";
+    }
+    else if(grade >= 0 && grade < 35)
+    {
+        return "F";
+    }
+    else // invalid
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    exit(EXIT_FAILURE);
+} // convertBangladesh()
+
 std::string convertChina(std::string input, std::string gradeScale)
 {
     double grade = -1;

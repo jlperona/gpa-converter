@@ -27,6 +27,8 @@ The output file will be overwritten with the final GPA data. The ID number and s
 
 All grade scale conversions are credited to [ForeignCredits](http://www.foreigncredits.com/Resources/Grade-Conversion/). The following grade scales have been implemented:
 
+* `Bangladesh`
+    * The most common grading scale in Bangladesh, the 100 point scale.
 * `China`
     * The most common grading scale in China, the 100 point scale.
 * `India 10`

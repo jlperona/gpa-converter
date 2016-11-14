@@ -17,6 +17,13 @@
  */
 void throwInvalidGradeError(std::string input, std::string gradeScale);
 /**
+ * Convert the most common scale in Bangladesh, the 100 point scale.
+ * \param input The input grade, expected to be between 0 - 100.
+ * \param gradeScale The grade scale name.
+ * \return The US letter grade equivalent.
+ */
+std::string convertBangladesh(std::string input, std::string gradeScale);
+/**
  * Convert the most common scale in China, the 100 point scale.
  * \param input The input grade, expected to be between 0 - 100.
  * \param gradeScale The grade scale name.

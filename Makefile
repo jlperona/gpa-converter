@@ -1,6 +1,6 @@
 # C++ SECTION
 
-DEBUG_MODE = TRUE
+# DEBUG_MODE = TRUE
 
 CXX = g++
 OUTPUT = gpa-converter
@@ -22,7 +22,9 @@ INCLUDES += -I$(INC_DIR)
 CFLAGS = -Wall -Wextra -ansi -pedantic -std=c++11 $(INCLUDES)
 
 ifdef DEBUG_MODE
-CFLAGS += -g
+	CFLAGS += -g
+else
+	CFLAGS += -O3
 endif
 
 all: directories $(BIN_DIR)/$(OUTPUT)
