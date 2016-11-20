@@ -11,6 +11,40 @@ void throwInvalidGradeError(std::string input, std::string gradeScale)
     exit(EXIT_FAILURE);
 } // throwInvalidGradeError()
 
+std::string convertAustraliaSecondary(std::string input, std::string gradeScale)
+{
+    if(input == "HD")
+    {
+        return "A+";
+    }
+    else if(input == "D")
+    {
+        return "A";
+    }
+    else if(input == "CR" || input == "Cr")
+    {
+        return "B";
+    }
+    else if(input == "P")
+    {
+        return "C";
+    }
+    else if(input == "PC")
+    {
+        return "D";
+    }
+    else if(input == "N")
+    {
+        return "F";
+    }
+    else
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    exit(EXIT_FAILURE);
+} // convertAustraliaSecondary()
+
 std::string convertBangladesh(std::string input, std::string gradeScale)
 {
     double grade = -1;

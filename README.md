@@ -25,8 +25,10 @@ The output file will be overwritten with the final GPA data. The ID number and s
 
 ### Grade Scales
 
-All grade scale conversions are credited to [ForeignCredits](http://www.foreigncredits.com/Resources/Grade-Conversion/). The following grade scales have been implemented:
+All grade scale conversions are credited to [ForeignCredits](http://www.foreigncredits.com/Resources/Grade-Conversion/). Grade scales convert number grades unless specified otherwise. The following grade scales have been implemented:
 
+* `Australia Secondary` *(letter)*
+    * The common post-secondary education grading scale in Australia.
 * `Bangladesh`
     * The most common grading scale in Bangladesh, the 100 point scale.
 * `China`
@@ -35,11 +37,11 @@ All grade scale conversions are credited to [ForeignCredits](http://www.foreignc
     * The UGC 10 point scale used in India.
 * `India 100`
     * The most common grading scale in India, the 100 point scale.
-* `Saudi Arabia 5`
+* `Saudi Arabia 5` *(letter)*
     * The 5 point scale used in Saudi Arabia.
 * `Switzerland 6`
     * The most common grading scale in Switzerland, the 6 point scale.
-* `United States` or `Taiwan`
+* `United States` or `Taiwan` *(letter)*
     * United States letter grades. This scale also can convert the 4.3 grade scale commonly used in Taiwan and China.
 
 The appropriate string above goes in the *Grade Scale Type* column for each student.
