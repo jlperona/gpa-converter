@@ -14,7 +14,11 @@ Course::Course(double unitsVal, std::string givenGradeVal, std::string scaleType
 
 void Course::convertToLetter()
 {
-    if(scaleType == "Bangladesh")
+    if(scaleType == "Australia Secondary")
+    {
+        letterGrade = convertAustraliaSecondary(givenGrade, scaleType);
+    }
+    else if(scaleType == "Bangladesh")
     {
         letterGrade = convertBangladesh(givenGrade, scaleType);
     }
