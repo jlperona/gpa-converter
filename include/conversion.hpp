@@ -89,12 +89,27 @@ std::string convertSaudiArabia5(std::string input, std::string gradeScale);
  */
 std::string convertSingapore(std::string input, std::string gradeScale);
 /**
+ * Convert the most common scale in South Korea.
+ * \param input The input grade.
+ * \param gradeScale The grade scale name.
+ * \return The US letter grade equivalent.
+ */
+std::string convertSouthKorea(std::string input, std::string gradeScale);
+/**
  * Convert the most common scale in Switzerland, the 6 point scale.
  * \param input The input grade, expected to be between 0 - 6.
  * \param gradeScale The grade scale name.
  * \return The US letter grade equivalent.
  */
 std::string convertSwitzerland6(std::string input, std::string gradeScale);
+
+/**
+ * Convert the most common scale in Taiwan, the 100 point scale.
+ * \param input The input grade, expected to be between 0 - 100.
+ * \param gradeScale The grade scale name.
+ * \return The US letter grade equivalent.
+ */
+std::string convertTaiwan(std::string input, std::string gradeScale);
 /**
  * Convert the most common scale in the United Kingdom, the 100 point scale.
  * \param input The input grade, expected to be between 0 - 100.

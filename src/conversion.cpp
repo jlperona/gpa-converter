@@ -476,6 +476,68 @@ std::string convertSingapore(std::string input, std::string gradeScale)
     exit(EXIT_FAILURE);
 } // convertSingapore()
 
+std::string convertSouthKorea(std::string input, std::string gradeScale)
+{
+    if(input == "A+")
+    {
+        return "A+";
+    }
+    else if(input == "A" || input == "A0" || input == "AO")
+    {
+        return "A";
+    }
+    else if(input == "A-")
+    {
+        return "A-";
+    }
+    else if(input == "B+")
+    {
+        return "B+";
+    }
+    else if(input == "B" || input == "B0" || input == "BO")
+    {
+        return "B";
+    }
+    else if(input == "B-")
+    {
+        return "B-";
+    }
+    else if(input == "C+")
+    {
+        return "C+";
+    }
+    else if(input == "C" || input == "C0" || input == "CO")
+    {
+        return "C";
+    }
+    else if(input == "C-")
+    {
+        return "C-";
+    }
+    else if(input == "D+")
+    {
+        return "D+";
+    }
+    else if(input == "D" || input == "D0" || input == "DO")
+    {
+        return "D";
+    }
+    else if(input == "D-")
+    {
+        return "D-";
+    }
+    else if(input == "F")
+    {
+        return "F";
+    }
+    else
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    exit(EXIT_FAILURE);
+} // convertSouthKorea()
+
 std::string convertSwitzerland6(std::string input, std::string gradeScale)
 {
     double grade = -1;
@@ -520,6 +582,47 @@ std::string convertSwitzerland6(std::string input, std::string gradeScale)
 
     exit(EXIT_FAILURE);
 } // convertSwitzerland6()
+
+std::string convertTaiwan(std::string input, std::string gradeScale)
+{
+    double grade = -1;
+
+    try // attempt to convert to number
+    {
+        grade = std::stod(input);
+    }
+    catch(const std::invalid_argument &e)
+    {
+        throwInvalidGradeError(input, gradeScale);
+    } // invalid grade
+
+    if(grade >= 90 && grade <= 100)
+    {
+        return "A+";
+    }
+    else if(grade >= 80 && grade < 90)
+    {
+        return "A";
+    }
+    else if(grade >= 70 && grade < 80)
+    {
+        return "B";
+    }
+    else if(grade >= 60 && grade < 70)
+    {
+        return "C";
+    }
+    else if(grade >= 0 && grade < 60)
+    {
+        return "F";
+    }
+    else
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    exit(EXIT_FAILURE);
+} // convertTaiwan()
 
 std::string convertUnitedKingdom(std::string input, std::string gradeScale)
 {

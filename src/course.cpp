@@ -50,19 +50,27 @@ void Course::convertToLetter()
     {
         letterGrade = convertSaudiArabia5(givenGrade, scaleType);
     }
-    else if (scaleType == "Singapore")
+    else if(scaleType == "Singapore")
     {
         letterGrade = convertSingapore(givenGrade, scaleType);
+    }
+    else if(scaleType == "South Korea")
+    {
+        letterGrade = convertSouthKorea(givenGrade, scaleType);
     }
     else if(scaleType == "Switzerland 6")
     {
         letterGrade = convertSwitzerland6(givenGrade, scaleType);
     }
+    else if(scaleType == "Taiwan")
+    {
+        letterGrade = convertTaiwan(givenGrade, scaleType);
+    }
     else if(scaleType == "United Kingdom")
     {
         letterGrade = convertUnitedKingdom(givenGrade, scaleType);
     }
-    else if(scaleType == "United States" || scaleType == "Taiwan")
+    else if(scaleType == "United States" || scaleType == "Hong Kong")
     {
         letterGrade = convertUnitedStates(givenGrade, scaleType);
     }

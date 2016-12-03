@@ -47,12 +47,16 @@ All grade scale conversions are credited to [ForeignCredits](http://www.foreignc
     * The 5 point scale used in Saudi Arabia.
 * `Singapore` *(letter)*
     * The most common grading scale in Singapore.
+* `South Korea` *(letter)*
+    * The most common grading scale in South Korea.
 * `Switzerland 6`
     * The most common grading scale in Switzerland, the 6 point scale.
+* `Taiwan`
+    * The most common grading scale in Taiwan, the 100 point scale.
 * `United Kingdom`
     * The most common grading scale in the United Kingdom, the 100 point scale.
-* `United States` or `Taiwan` *(letter)*
-    * United States letter grades. This scale also can convert the 4.3 grade scale commonly used in Taiwan and China.
+* `United States` or `Hong Kong` *(letter)*
+    * United States letter grades. This scale also can convert the 4.3 grade scale commonly used in Taiwan, China, and Hong Kong.
 
 The appropriate string above goes in the *Grade Scale Type* column for each student.
 
@@ -94,5 +98,4 @@ Some of my future goals for this program:
 
 * Add more grade scales as I encounter them
     * Scales to add:
-        * Hong Kong (alias to United States)
         * South Korea
