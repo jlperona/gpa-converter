@@ -50,6 +50,10 @@ void Course::convertToLetter()
     {
         letterGrade = convertSaudiArabia5(givenGrade, scaleType);
     }
+    else if (scaleType == "Singapore")
+    {
+        letterGrade = convertSingapore(givenGrade, scaleType);
+    }
     else if(scaleType == "Switzerland 6")
     {
         letterGrade = convertSwitzerland6(givenGrade, scaleType);

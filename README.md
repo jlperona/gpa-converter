@@ -45,6 +45,8 @@ All grade scale conversions are credited to [ForeignCredits](http://www.foreignc
     * A variant of India 100, where the grade given is scaled to out of 100 by the units given. In this case, the units are assumed to be the maximum.
 * `Saudi Arabia 5` *(letter)*
     * The 5 point scale used in Saudi Arabia.
+* `Singapore` *(letter)*
+    * The most common grading scale in Singapore.
 * `Switzerland 6`
     * The most common grading scale in Switzerland, the 6 point scale.
 * `United Kingdom`
@@ -94,4 +96,3 @@ Some of my future goals for this program:
     * Scales to add:
         * Hong Kong (alias to United States)
         * South Korea
-        * Singapore

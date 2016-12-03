@@ -426,6 +426,56 @@ std::string convertSaudiArabia5(std::string input, std::string gradeScale)
     exit(EXIT_FAILURE);
 } // convertSaudiArabia5()
 
+std::string convertSingapore(std::string input, std::string gradeScale)
+{
+    if(input == "A+" || input == "AD")
+    {
+        return "A+";
+    }
+    else if(input == "A")
+    {
+        return "A";
+    }
+    else if(input == "A-")
+    {
+        return "A-";
+    }
+    else if(input == "B+")
+    {
+        return "B+";
+    }
+    else if(input == "B")
+    {
+        return "B";
+    }
+    else if(input == "C+")
+    {
+        return "C+";
+    }
+    else if(input == "C")
+    {
+        return "C";
+    }
+    else if(input == "D+")
+    {
+        return "C-";
+    }
+    else if(input == "D")
+    {
+        return "D";
+    }
+    else if(input == "F")
+    {
+        return "F";
+    }
+    else
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    exit(EXIT_FAILURE);
+} // convertSingapore()
+
 std::string convertSwitzerland6(std::string input, std::string gradeScale)
 {
     double grade = -1;
