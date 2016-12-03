@@ -22,6 +22,14 @@ void Course::convertToLetter()
     {
         letterGrade = convertBangladesh(givenGrade, scaleType);
     }
+    else if(scaleType == "Canada British Columbia")
+    {
+        letterGrade = convertCanadaBritishColumbia(givenGrade, scaleType);
+    }
+    else if(scaleType == "Canada Ontario")
+    {
+        letterGrade = convertCanadaOntario(givenGrade, scaleType);
+    }
     else if(scaleType == "China")
     {
         letterGrade = convertChina(givenGrade, scaleType);
@@ -34,6 +42,10 @@ void Course::convertToLetter()
     {
         letterGrade = convertIndia100(givenGrade, scaleType);
     }
+    else if(scaleType == "India Marks")
+    {
+        letterGrade = convertIndiaMarks(givenGrade, scaleType, this->getUnits());
+    }
     else if(scaleType == "Saudi Arabia 5")
     {
         letterGrade = convertSaudiArabia5(givenGrade, scaleType);
@@ -41,6 +53,10 @@ void Course::convertToLetter()
     else if(scaleType == "Switzerland 6")
     {
         letterGrade = convertSwitzerland6(givenGrade, scaleType);
+    }
+    else if(scaleType == "United Kingdom")
+    {
+        letterGrade = convertUnitedKingdom(givenGrade, scaleType);
     }
     else if(scaleType == "United States" || scaleType == "Taiwan")
     {

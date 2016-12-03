@@ -90,6 +90,116 @@ std::string convertBangladesh(std::string input, std::string gradeScale)
     exit(EXIT_FAILURE);
 } // convertBangladesh()
 
+std::string convertCanadaBritishColumbia(std::string input, std::string gradeScale)
+{
+    double grade = -1;
+
+    try // attempt to convert to number
+    {
+        grade = std::stod(input);
+    }
+    catch(const std::invalid_argument &e)
+    {
+        throwInvalidGradeError(input, gradeScale);
+    } // invalid grade
+
+    if(grade >= 90 && grade <= 100)
+    {
+        return "A+";
+    }
+    else if(grade >= 85 && grade < 90)
+    {
+        return "A";
+    }
+    else if(grade >= 80 && grade < 85)
+    {
+        return "A-";
+    }
+    else if(grade >= 76 && grade < 80)
+    {
+        return "B+";
+    }
+    else if(grade >= 72 && grade < 76)
+    {
+        return "B";
+    }
+    else if(grade >= 68 && grade < 72)
+    {
+        return "B-";
+    }
+    else if(grade >= 64 && grade < 68)
+    {
+        return "C+";
+    }
+    else if(grade >= 60 && grade < 64)
+    {
+        return "C";
+    }
+    else if(grade >= 55 && grade < 60)
+    {
+        return "C-";
+    }
+    else if(grade >= 50 && grade < 55)
+    {
+        return "D";
+    }
+    else if(grade >= 0 && grade < 50)
+    {
+        return "F";
+    }
+    else
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    exit(EXIT_FAILURE);
+} // convertCanadaBritishColumbia()
+
+std::string convertCanadaOntario(std::string input, std::string gradeScale)
+{
+    double grade = -1;
+
+    try // attempt to convert to number
+    {
+        grade = std::stod(input);
+    }
+    catch(const std::invalid_argument &e)
+    {
+        throwInvalidGradeError(input, gradeScale);
+    } // invalid grade
+
+    if(grade >= 90 && grade <= 100)
+    {
+        return "A+";
+    }
+    else if(grade >= 80 && grade < 90)
+    {
+        return "A";
+    }
+    else if(grade >= 70 && grade < 80)
+    {
+        return "B";
+    }
+    else if(grade >= 60 && grade < 70)
+    {
+        return "C";
+    }
+    else if(grade >= 50 && grade < 60)
+    {
+        return "D";
+    }
+    else if(grade >= 0 && grade < 50)
+    {
+        return "F";
+    }
+    else
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    exit(EXIT_FAILURE);
+} // convertCanadaOntario()
+
 std::string convertChina(std::string input, std::string gradeScale)
 {
     double grade = -1;
@@ -218,6 +328,54 @@ std::string convertIndia100(std::string input, std::string gradeScale)
     exit(EXIT_FAILURE);
 } // convertIndia100()
 
+std::string convertIndiaMarks(std::string input, std::string gradeScale, double marks)
+{
+    double grade = -1;
+
+    try // attempt to convert to number
+    {
+        grade = std::stod(input);
+    }
+    catch(const std::invalid_argument &e)
+    {
+        throwInvalidGradeError(input, gradeScale);
+    } // invalid grade
+
+    if(grade < 0 || grade > marks)
+    {
+        throwInvalidGradeError(input, gradeScale);
+    } // out of bounds for this grade
+
+    // scale grade to out of 100
+    double scaledGrade = grade * 100 / marks;
+
+    /* The following is copied from convertIndia100(). The reason why a function call isn't made is because
+     * the conversion functions expect a string, and converting scaledGrade to a string may result in a
+     * loss of resolution. */
+    if(scaledGrade >= 60 && scaledGrade <= 100)
+    {
+        return "A";
+    }
+    else if(scaledGrade >= 50 && scaledGrade < 60)
+    {
+        return "B";
+    }
+    else if(scaledGrade >= 40 && scaledGrade < 50)
+    {
+        return "C";
+    }
+    else if(scaledGrade >= 0 && scaledGrade < 40)
+    {
+        return "F";
+    }
+    else // invalid
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    exit(EXIT_FAILURE);
+} // convertIndiaMarks()
+
 std::string convertSaudiArabia5(std::string input, std::string gradeScale)
 {
     if(input == "A+")
@@ -312,6 +470,55 @@ std::string convertSwitzerland6(std::string input, std::string gradeScale)
 
     exit(EXIT_FAILURE);
 } // convertSwitzerland6()
+
+std::string convertUnitedKingdom(std::string input, std::string gradeScale)
+{
+    double grade = -1;
+
+    try // attempt to convert to number
+    {
+        grade = std::stod(input);
+    }
+    catch(const std::invalid_argument &e)
+    {
+        throwInvalidGradeError(input, gradeScale);
+    } // invalid grade
+
+    if(grade >= 70 && grade <= 100)
+    {
+        return "A";
+    }
+    else if(grade >= 65 && grade < 70)
+    {
+        return "A-";
+    }
+    else if(grade >= 60 && grade < 65)
+    {
+        return "B+";
+    }
+    else if(grade >= 50 && grade < 60)
+    {
+        return "B";
+    }
+    else if(grade >= 45 && grade < 50)
+    {
+        return "C+";
+    }
+    else if(grade >= 40 && grade < 45)
+    {
+        return "C";
+    }
+    else if(grade >= 0 && grade < 40)
+    {
+        return "F";
+    }
+    else
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    exit(EXIT_FAILURE);
+} // convertUnitedKingdom()
 
 std::string convertUnitedStates(std::string input, std::string gradeScale)
 {

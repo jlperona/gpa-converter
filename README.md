@@ -31,16 +31,24 @@ All grade scale conversions are credited to [ForeignCredits](http://www.foreignc
     * The common post-secondary education grading scale in Australia.
 * `Bangladesh`
     * The most common grading scale in Bangladesh, the 100 point scale.
+* `Canada British Columbia`
+    * The most common 100 point grading scale in British Columbia, Canada.
+* `Canada Ontario`
+    * The most common 100 point grading scale in Ontario, Canada.
 * `China`
     * The most common grading scale in China, the 100 point scale.
 * `India 10`
     * The UGC 10 point scale used in India.
 * `India 100`
     * The most common grading scale in India, the 100 point scale.
+* `India Marks`
+    * A variant of India 100, where the grade given is scaled to out of 100 by the units given. In this case, the units are assumed to be the maximum.
 * `Saudi Arabia 5` *(letter)*
     * The 5 point scale used in Saudi Arabia.
 * `Switzerland 6`
     * The most common grading scale in Switzerland, the 6 point scale.
+* `United Kingdom`
+    * The most common grading scale in the United Kingdom, the 100 point scale.
 * `United States` or `Taiwan` *(letter)*
     * United States letter grades. This scale also can convert the 4.3 grade scale commonly used in Taiwan and China.
 
@@ -82,7 +90,8 @@ This seemed inefficient. This app helps speed the process along.
 
 Some of my future goals for this program:
 
-* Make the CSV parsing more robust
-    * Deal with quotes that are used to wrap cells with commas in them
-        * This may not be needed as cells shouldn't need to contain commas to begin with
 * Add more grade scales as I encounter them
+    * Scales to add:
+        * Hong Kong (alias to United States)
+        * South Korea
+        * Singapore

@@ -31,6 +31,20 @@ std::string convertAustraliaSecondary(std::string input, std::string gradeScale)
  */
 std::string convertBangladesh(std::string input, std::string gradeScale);
 /**
+ * Convert the grading scale used in British Columbia, Canada.
+ * \param input The input grade, expected to be between 0 - 100.
+ * \param gradeScale The grade scale name.
+ * \return The US letter grade equivalent.
+ */
+std::string convertCanadaBritishColumbia(std::string input, std::string gradeScale);
+/**
+ * Convert the grading scale used in Ontario, Canada.
+ * \param input The input grade, expected to be between 0 - 100.
+ * \param gradeScale The grade scale name.
+ * \return The US letter grade equivalent.
+ */
+std::string convertCanadaOntario(std::string input, std::string gradeScale);
+/**
  * Convert the most common scale in China, the 100 point scale.
  * \param input The input grade, expected to be between 0 - 100.
  * \param gradeScale The grade scale name.
@@ -52,6 +66,15 @@ std::string convertIndia10(std::string input, std::string gradeScale);
  */
 std::string convertIndia100(std::string input, std::string gradeScale);
 /**
+ * Convert a fairly common scale in India, where the number of marks are the "units," in a sense.
+ * The marks given are scaled to out of 100, and then graded as in the India 100 scale.
+ * \param input The input grade, expected to be between 0 and the number of marks.
+ * \param gradeScale The grade scale name.
+ * \param marks The number of marks for this class.
+ * \return The US letter grade equivalent.
+ */
+std::string convertIndiaMarks(std::string input, std::string gradeScale, double marks);
+/**
  * Convert the five point scale used in Saudi Arabia.
  * \param input The input grade, expected to be between 0 - 5.
  * \param gradeScale The grade scale name.
@@ -65,6 +88,13 @@ std::string convertSaudiArabia5(std::string input, std::string gradeScale);
  * \return The US letter grade equivalent.
  */
 std::string convertSwitzerland6(std::string input, std::string gradeScale);
+/**
+ * Convert the most common scale in the United Kingdom, the 100 point scale.
+ * \param input The input grade, expected to be between 0 - 100.
+ * \param gradeScale The grade scale name.
+ * \return The US letter grade equivalent.
+ */
+std::string convertUnitedKingdom(std::string input, std::string gradeScale);
 /**
  * Convert a United States letter grade. Note that since there is a routine to do this already,
  * this function is limited to verification of inputted grades.
