@@ -37,12 +37,16 @@ All grade scale conversions are credited to [ForeignCredits](http://www.foreignc
     * The most common 100 point grading scale in Ontario, Canada.
 * `China`
     * The most common grading scale in China, the 100 point scale.
+* `China Modified`
+    * The most common grading scale in China, the 100 point scale.
+    * The conversion scale has been modified to use the one in use at UC Davis.
 * `India 10`
     * The UGC 10 point scale used in India.
 * `India 100`
     * The most common grading scale in India, the 100 point scale.
 * `India Marks`
-    * A variant of India 100, where the grade given is scaled to out of 100 by the units given. In this case, the units are assumed to be the maximum.
+    * A variant of India 100, where the grade given is scaled to out of 100 by the units given.
+    * In this case, the units are assumed to be the maximum.
 * `Saudi Arabia 5` *(letter)*
     * The 5 point scale used in Saudi Arabia.
 * `Singapore` *(letter)*
@@ -56,7 +60,8 @@ All grade scale conversions are credited to [ForeignCredits](http://www.foreignc
 * `United Kingdom`
     * The most common grading scale in the United Kingdom, the 100 point scale.
 * `United States` or `Hong Kong` *(letter)*
-    * United States letter grades. This scale also can convert the 4.3 grade scale commonly used in Taiwan, China, and Hong Kong.
+    * United States letter grades.
+    * This scale also can convert the 4.3 grade scale commonly used in Taiwan, China, and Hong Kong.
 
 The appropriate string above goes in the *Grade Scale Type* column for each student.
 
@@ -97,5 +102,3 @@ This seemed inefficient. This app helps speed the process along.
 Some of my future goals for this program:
 
 * Add more grade scales as I encounter them
-    * Scales to add:
-        * South Korea

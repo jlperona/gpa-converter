@@ -8,6 +8,7 @@ void throwInvalidGradeError(std::string input, std::string gradeScale)
 {
     std::cerr << "ERROR: Invalid grade '" << input << "' in student using grade scale '"
               << gradeScale << "'." << std::endl;
+
     exit(EXIT_FAILURE);
 } // throwInvalidGradeError()
 
@@ -241,6 +242,38 @@ std::string convertChina(std::string input, std::string gradeScale)
     exit(EXIT_FAILURE);
 } // convertChina()
 
+double convertChinaModified(std::string input, std::string gradeScale)
+{
+    double grade = -1;
+
+    try // attempt to convert to number
+    {
+        grade = std::stod(input);
+    }
+    catch(const std::invalid_argument &e)
+    {
+        throwInvalidGradeError(input, gradeScale);
+    } // invalid grade
+
+    if(grade >= 91 && grade <= 100)
+    {
+        return 4.0;
+    }
+    else if(grade >= 0 && grade <= 51)
+    {
+        return 0.0;
+    } // handle easy cases first
+    else if(grade < 0 || grade > 100)
+    {
+        throwInvalidGradeError(input, gradeScale);
+    } // invalid
+
+    // truncate to do easy math
+    unsigned truncatedGrade = grade;
+
+    return (truncatedGrade / 10) - 5.1;
+} // convertChinaModified()
+
 std::string convertIndia10(std::string input, std::string gradeScale)
 {
     double grade = -1;
@@ -288,11 +321,6 @@ std::string convertIndia10(std::string input, std::string gradeScale)
 
 std::string convertIndia100(std::string input, std::string gradeScale)
 {
-    if(input == "G")
-    {
-        return "D";
-    } // handle non-number first
-
     double grade = -1;
 
     try // attempt to convert to number
@@ -304,6 +332,11 @@ std::string convertIndia100(std::string input, std::string gradeScale)
         throwInvalidGradeError(input, gradeScale);
     } // invalid grade
 
+    return convertIndia100(grade, gradeScale);
+} // convertIndia100(std::string)
+
+std::string convertIndia100(double grade, std::string gradeScale)
+{
     if(grade >= 60 && grade <= 100)
     {
         return "A";
@@ -322,11 +355,11 @@ std::string convertIndia100(std::string input, std::string gradeScale)
     }
     else // invalid
     {
-        throwInvalidGradeError(input, gradeScale);
+        throwInvalidGradeError(std::to_string(grade), gradeScale);
     }
 
     exit(EXIT_FAILURE);
-} // convertIndia100()
+} // convertIndia100(double)
 
 std::string convertIndiaMarks(std::string input, std::string gradeScale, double marks)
 {
@@ -349,31 +382,7 @@ std::string convertIndiaMarks(std::string input, std::string gradeScale, double 
     // scale grade to out of 100
     double scaledGrade = grade * 100 / marks;
 
-    /* The following is copied from convertIndia100(). The reason why a function call isn't made is because
-     * the conversion functions expect a string, and converting scaledGrade to a string may result in a
-     * loss of resolution. */
-    if(scaledGrade >= 60 && scaledGrade <= 100)
-    {
-        return "A";
-    }
-    else if(scaledGrade >= 50 && scaledGrade < 60)
-    {
-        return "B";
-    }
-    else if(scaledGrade >= 40 && scaledGrade < 50)
-    {
-        return "C";
-    }
-    else if(scaledGrade >= 0 && scaledGrade < 40)
-    {
-        return "F";
-    }
-    else // invalid
-    {
-        throwInvalidGradeError(input, gradeScale);
-    }
-
-    exit(EXIT_FAILURE);
+    return convertIndia100(scaledGrade, gradeScale);
 } // convertIndiaMarks()
 
 std::string convertSaudiArabia5(std::string input, std::string gradeScale)

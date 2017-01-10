@@ -20,7 +20,7 @@ class Student
     private:
         /// The student's identifier.
         std::string idNumber;
-        /// A secondary identifier. Useful if a student has two transcripts.
+        /// A secondary identifier. Useful if a student has multiple transcripts.
         std::string type;
         /// The type of grading scale that this student's grades are based on.
         std::string scaleType;

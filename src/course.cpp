@@ -34,6 +34,11 @@ void Course::convertToLetter()
     {
         letterGrade = convertChina(givenGrade, scaleType);
     }
+    else if(scaleType == "China Modified")
+    {
+        letterGradePoints = convertChinaModified(givenGrade, scaleType);
+        return;
+    }
     else if(scaleType == "India 10")
     {
         letterGrade = convertIndia10(givenGrade, scaleType);

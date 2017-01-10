@@ -61,7 +61,8 @@ void Student::calculateGpa()
     /* GPA Formula (c = class)
      * numerator = c1 units * c1 grade points + c2 units * c2 grade points + ...
      * denominator = c1 units + c2 units + ...
-     * final GPA = numerator / denominator */
+     * final GPA = numerator / denominator
+     */
 
     gradePointSum = 0;
     unitSum = 0;

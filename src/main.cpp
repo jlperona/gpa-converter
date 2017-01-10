@@ -49,5 +49,6 @@ int main(int argc, char* argv[])
 
     // Create output file.
     createOutput(outputFileName, students);
+
     return 0;
 } // main()

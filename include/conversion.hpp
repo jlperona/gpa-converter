@@ -52,6 +52,15 @@ std::string convertCanadaOntario(std::string input, std::string gradeScale);
  */
 std::string convertChina(std::string input, std::string gradeScale);
 /**
+ * Convert the most common scale in China, the 100 point scale.
+ * The conversion scale is modified to use the one in place at UC Davis.
+ * This scale directly returns the number of grade points and thus returns a double.
+ * \param input The input grade, expected to be between 0 - 100.
+ * \param gradeScale The grade scale name.
+ * \return The US letter grade equivalent.
+ */
+double convertChinaModified(std::string input, std::string gradeScale);
+/**
  * Convert another Indian scale, the UGC 10 point scale.
  * \param input The input grade, expected to be between 0 - 100.
  * \param gradeScale The grade scale name.
@@ -60,11 +69,20 @@ std::string convertChina(std::string input, std::string gradeScale);
 std::string convertIndia10(std::string input, std::string gradeScale);
 /**
  * Convert the most common scale in India, the 100 point scale.
- * \param input The input grade, expected to be between 0 - 100 or 'G'.
+ * This function accepts only strings, and passes the converted string to the overloaded double function to convert.
+ * \param input The input grade, expected to be a string between 0 - 100.
  * \param gradeScale The grade scale name.
  * \return The US letter grade equivalent.
  */
 std::string convertIndia100(std::string input, std::string gradeScale);
+/**
+ * Convert the most common scale in India, the 100 point scale.
+ * This function does the conversion, as convertIndiaMarks() also uses the 100 point scale.
+ * \param grade The input grade, expected to be between a double between 0 - 100.
+ * \param gradeScale The grade scale name.
+ * \return The US letter grade equivalent.
+ */
+std::string convertIndia100(double grade, std::string gradeScale);
 /**
  * Convert a fairly common scale in India, where the number of marks are the "units," in a sense.
  * The marks given are scaled to out of 100, and then graded as in the India 100 scale.
