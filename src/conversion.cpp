@@ -270,8 +270,9 @@ double convertChinaModified(std::string input, std::string gradeScale)
 
     // truncate to do easy math
     unsigned truncatedGrade = grade;
+    double finalGrade = (truncatedGrade / 10.0) - 5.1;
 
-    return (truncatedGrade / 10) - 5.1;
+    return finalGrade;
 } // convertChinaModified()
 
 std::string convertIndia10(std::string input, std::string gradeScale)
@@ -384,6 +385,51 @@ std::string convertIndiaMarks(std::string input, std::string gradeScale, double 
 
     return convertIndia100(scaledGrade, gradeScale);
 } // convertIndiaMarks()
+
+std::string convertIran(std::string input, std::string gradeScale)
+{
+    double grade = -1;
+
+    try // attempt to convert to number
+    {
+        grade = std::stod(input);
+    }
+    catch(const std::invalid_argument &e)
+    {
+        throwInvalidGradeError(input, gradeScale);
+    } // invalid grade
+
+    if(grade >= 18 && grade <= 20)
+    {
+        return "A+";
+    }
+    else if(grade >= 16 && grade < 18)
+    {
+        return "A";
+    }
+    else if(grade >= 14 && grade < 16)
+    {
+        return "B";
+    }
+    else if(grade >= 12 && grade < 14)
+    {
+        return "C";
+    }
+    else if(grade >= 10 && grade < 12)
+    {
+        return "D";
+    }
+    else if(grade >= 0 && grade < 10)
+    {
+        return "F";
+    }
+    else // invalid
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    exit(EXIT_FAILURE);
+} // convertIran()
 
 std::string convertSaudiArabia5(std::string input, std::string gradeScale)
 {

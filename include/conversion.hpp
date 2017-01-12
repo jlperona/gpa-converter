@@ -93,6 +93,13 @@ std::string convertIndia100(double grade, std::string gradeScale);
  */
 std::string convertIndiaMarks(std::string input, std::string gradeScale, double marks);
 /**
+ * Convert the 20 point scale used in Iran.
+ * \param input The input grade, expected to be between 0 - 20.
+ * \param gradeScale The grade scale name.
+ * \return The US letter grade equivalent.
+ */
+std::string convertIran(std::string input, std::string gradeScale);
+/**
  * Convert the five point scale used in Saudi Arabia.
  * \param input The input grade.
  * \param gradeScale The grade scale name.

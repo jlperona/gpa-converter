@@ -47,6 +47,8 @@ All grade scale conversions are credited to [ForeignCredits](http://www.foreignc
 * `India Marks`
     * A variant of India 100, where the grade given is scaled to out of 100 by the units given.
     * In this case, the units are assumed to be the maximum.
+* `Iran`
+    * The 20 point scale used in Iran.
 * `Saudi Arabia 5` *(letter)*
     * The 5 point scale used in Saudi Arabia.
 * `Singapore` *(letter)*

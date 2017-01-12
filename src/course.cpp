@@ -51,6 +51,10 @@ void Course::convertToLetter()
     {
         letterGrade = convertIndiaMarks(givenGrade, scaleType, this->getUnits());
     }
+    else if(scaleType == "Iran")
+    {
+        letterGrade = convertIran(givenGrade, scaleType);
+    }
     else if(scaleType == "Saudi Arabia 5")
     {
         letterGrade = convertSaudiArabia5(givenGrade, scaleType);
