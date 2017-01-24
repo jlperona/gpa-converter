@@ -12,7 +12,7 @@ void throwInvalidGradeError(std::string input, std::string gradeScale)
     exit(EXIT_FAILURE);
 } // throwInvalidGradeError()
 
-std::string convertAustraliaSecondary(std::string input, std::string gradeScale)
+std::string convertAustralia(std::string input, std::string gradeScale)
 {
     if(input == "HD")
     {
@@ -44,7 +44,7 @@ std::string convertAustraliaSecondary(std::string input, std::string gradeScale)
     }
 
     exit(EXIT_FAILURE);
-} // convertAustraliaSecondary()
+} // convertAustralia()
 
 std::string convertBangladesh(std::string input, std::string gradeScale)
 {
@@ -431,7 +431,33 @@ std::string convertIran(std::string input, std::string gradeScale)
     exit(EXIT_FAILURE);
 } // convertIran()
 
-std::string convertSaudiArabia5(std::string input, std::string gradeScale)
+std::string convertRussia(std::string input, std::string gradeScale)
+{
+    if(input == "Excellent" || input == "E")
+    {
+
+    }
+    else if(input == "Good" || input == "G")
+    {
+
+    }
+    else if(input == "Satisfactory" || input == "S")
+    {
+
+    }
+    else if(input == "Unsatisfactory" || input == "U")
+    {
+
+    }
+    else // invalid
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    exit(EXIT_FAILURE);
+} // convertRussia()
+
+std::string convertSaudiArabia(std::string input, std::string gradeScale)
 {
     if(input == "A+")
     {
@@ -479,7 +505,7 @@ std::string convertSaudiArabia5(std::string input, std::string gradeScale)
     }
 
     exit(EXIT_FAILURE);
-} // convertSaudiArabia5()
+} // convertSaudiArabia()
 
 std::string convertSingapore(std::string input, std::string gradeScale)
 {

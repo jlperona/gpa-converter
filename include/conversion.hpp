@@ -17,12 +17,12 @@
  */
 void throwInvalidGradeError(std::string input, std::string gradeScale);
 /**
- * Convert the common post-secondary education grading scale in Australia.
+ * Convert the most common scale in Australia.
  * \param input The input grade.
  * \param gradeScale The grade scale name.
  * \return The US letter grade equivalent.
  */
-std::string convertAustraliaSecondary(std::string input, std::string gradeScale);
+std::string convertAustralia(std::string input, std::string gradeScale);
 /**
  * Convert the most common scale in Bangladesh, the 100 point scale.
  * \param input The input grade, expected to be between 0 - 100.
@@ -100,12 +100,19 @@ std::string convertIndiaMarks(std::string input, std::string gradeScale, double 
  */
 std::string convertIran(std::string input, std::string gradeScale);
 /**
- * Convert the five point scale used in Saudi Arabia.
+ * Convert the most common scale in Russia.
  * \param input The input grade.
  * \param gradeScale The grade scale name.
  * \return The US letter grade equivalent.
  */
-std::string convertSaudiArabia5(std::string input, std::string gradeScale);
+std::string convertRussia(std::string input, std::string gradeScale);
+/**
+ * Convert the most common scale used in Saudi Arabia.
+ * \param input The input grade.
+ * \param gradeScale The grade scale name.
+ * \return The US letter grade equivalent.
+ */
+std::string convertSaudiArabia(std::string input, std::string gradeScale);
 /**
  * Convert the most common scale in Singapore.
  * \param input The input grade.

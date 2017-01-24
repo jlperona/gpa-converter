@@ -27,7 +27,7 @@ The output file will be overwritten with the final GPA data. The ID number and s
 
 All grade scale conversions are credited to [ForeignCredits](http://www.foreigncredits.com/Resources/Grade-Conversion/). Grade scales convert number grades unless specified otherwise. The following grade scales have been implemented:
 
-* `Australia Secondary` *(letter)*
+* `Australia` *(letter)*
     * The common post-secondary education grading scale in Australia.
 * `Bangladesh`
     * The most common grading scale in Bangladesh, the 100 point scale.
@@ -49,8 +49,11 @@ All grade scale conversions are credited to [ForeignCredits](http://www.foreignc
     * In this case, the units are assumed to be the maximum.
 * `Iran`
     * The 20 point scale used in Iran.
-* `Saudi Arabia 5` *(letter)*
-    * The 5 point scale used in Saudi Arabia.
+* `Russia` *(letter)*
+    * The most common grading scale in Russia.
+    * Either the full translated grade (`Excellent`, etc.) or the first letter of the translated grade (`E`, etc.) is accepted.
+* `Saudi Arabia` *(letter)*
+    * The most common grading scale in Saudi Arabia.
 * `Singapore` *(letter)*
     * The most common grading scale in Singapore.
 * `South Korea` *(letter)*
@@ -61,9 +64,9 @@ All grade scale conversions are credited to [ForeignCredits](http://www.foreignc
     * The most common grading scale in Taiwan, the 100 point scale.
 * `United Kingdom`
     * The most common grading scale in the United Kingdom, the 100 point scale.
-* `United States` or `Hong Kong` *(letter)*
+* `United States`, `Hong Kong`, or `Japan` *(letter)*
     * United States letter grades.
-    * This scale also can convert the 4.3 grade scale commonly used in Taiwan, China, and Hong Kong.
+    * This scale also can convert the 4.3 grade scale commonly used in Taiwan, China, Japan, and Hong Kong.
 
 The appropriate string above goes in the *Grade Scale Type* column for each student.
 

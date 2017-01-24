@@ -14,9 +14,9 @@ Course::Course(double unitsVal, std::string givenGradeVal, std::string scaleType
 
 void Course::convertToLetter()
 {
-    if(scaleType == "Australia Secondary")
+    if(scaleType == "Australia")
     {
-        letterGrade = convertAustraliaSecondary(givenGrade, scaleType);
+        letterGrade = convertAustralia(givenGrade, scaleType);
     }
     else if(scaleType == "Bangladesh")
     {
@@ -55,9 +55,13 @@ void Course::convertToLetter()
     {
         letterGrade = convertIran(givenGrade, scaleType);
     }
-    else if(scaleType == "Saudi Arabia 5")
+    else if(scaleType == "Russia")
     {
-        letterGrade = convertSaudiArabia5(givenGrade, scaleType);
+        letterGrade = convertRussia(givenGrade, scaleType);
+    }
+    else if(scaleType == "Saudi Arabia")
+    {
+        letterGrade = convertSaudiArabia(givenGrade, scaleType);
     }
     else if(scaleType == "Singapore")
     {
@@ -79,7 +83,7 @@ void Course::convertToLetter()
     {
         letterGrade = convertUnitedKingdom(givenGrade, scaleType);
     }
-    else if(scaleType == "United States" || scaleType == "Hong Kong")
+    else if(scaleType == "United States" || scaleType == "Hong Kong" || scaleType == "Japan")
     {
         letterGrade = convertUnitedStates(givenGrade, scaleType);
     }
