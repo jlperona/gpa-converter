@@ -435,19 +435,19 @@ std::string convertRussia(std::string input, std::string gradeScale)
 {
     if(input == "Excellent" || input == "E")
     {
-
+        return "A";
     }
     else if(input == "Good" || input == "G")
     {
-
+        return "B";
     }
     else if(input == "Satisfactory" || input == "S")
     {
-
+        return "C";
     }
     else if(input == "Unsatisfactory" || input == "U")
     {
-
+        return "F";
     }
     else // invalid
     {
