@@ -61,6 +61,13 @@ std::string convertChina(std::string input, std::string gradeScale);
  */
 double convertChinaModified(std::string input, std::string gradeScale);
 /**
+ * Convert the common tertiary education grade scale in Germany.
+ * \param input The input grade, expected to be between 1 - 6.
+ * \param gradeScale The grade scale name.
+ * \return The US letter grade equivalent.
+ */
+std::string convertGermany(std::string input, std::string gradeScale);
+/**
  * Convert another Indian scale, the UGC 10 point scale.
  * \param input The input grade, expected to be between 0 - 100.
  * \param gradeScale The grade scale name.

@@ -275,6 +275,43 @@ double convertChinaModified(std::string input, std::string gradeScale)
     return finalGrade;
 } // convertChinaModified()
 
+std::string convertGermany(std::string input, std::string gradeScale)
+{
+    double grade = -1;
+
+    try // attempt to convert to number
+    {
+        grade = std::stod(input);
+    }
+    catch(const std::invalid_argument &e)
+    {
+        throwInvalidGradeError(input, gradeScale);
+    } // invalid grade
+
+    if(grade > 4 && grade <= 6)
+    {
+        return "F";
+    }
+    else if(grade > 3.5 && grade <= 4)
+    {
+        return "C";
+    }
+    else if(grade > 2.5 && grade <= 3.5)
+    {
+        return "B";
+    }
+    else if(grade >= 1 && grade <= 2.5)
+    {
+        return "A";
+    }
+    else // invalid
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    exit(EXIT_FAILURE);
+} // convertGermany()
+
 std::string convertIndia10(std::string input, std::string gradeScale)
 {
     double grade = -1;

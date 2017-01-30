@@ -40,6 +40,8 @@ All grade scale conversions are credited to [ForeignCredits](http://www.foreignc
 * `China Modified`
     * The most common grading scale in China, the 100 point scale.
     * The conversion scale has been modified to use the one in use at UC Davis.
+* `Germany`
+    * The common tertiary education grading scale in Germany.
 * `India 10`
     * The UGC 10 point scale used in India.
 * `India 100`
