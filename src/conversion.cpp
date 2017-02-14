@@ -468,6 +468,71 @@ std::string convertIran(std::string input, std::string gradeScale)
     exit(EXIT_FAILURE);
 } // convertIran()
 
+std::string convertPhilippines(std::string input, std::string gradeScale)
+{
+    double grade = -1;
+
+    try // attempt to convert to number
+    {
+        grade = std::stod(input);
+    }
+    catch(const std::invalid_argument &e)
+    {
+        throwInvalidGradeError(input, gradeScale);
+    } // invalid grade
+
+    if(grade >= 1 && grade < 1.25)
+    {
+        return "A+";
+    }
+    else if(grade >= 1.25 && grade < 1.5)
+    {
+        return "A";
+    }
+    else if(grade >= 1.5 && grade < 1.75)
+    {
+        return "A-";
+    }
+    else if(grade >= 1.75 && grade < 2)
+    {
+        return "B+";
+    }
+    else if(grade >= 2 && grade < 2.25)
+    {
+        return "B";
+    }
+    else if(grade >= 2.25 && grade < 2.5)
+    {
+        return "B-";
+    }
+    else if(grade >= 2.5 && grade < 2.75)
+    {
+        return "C+";
+    }
+    else if(grade >= 2.75 && grade < 3)
+    {
+        return "C";
+    }
+    else if(grade >= 3 && grade < 4)
+    {
+        return "C-";
+    }
+    else if(grade >= 4 && grade < 5)
+    {
+        return "D";
+    }
+    else if(grade == 5)
+    {
+        return "F";
+    }
+    else // invalid
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    exit(EXIT_FAILURE);
+} // convertPhilippines()
+
 std::string convertRussia(std::string input, std::string gradeScale)
 {
     if(input == "Excellent" || input == "E")

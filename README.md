@@ -51,6 +51,8 @@ All grade scale conversions are credited to [ForeignCredits](http://www.foreignc
     * In this case, the units are assumed to be the maximum.
 * `Iran`
     * The 20 point scale used in Iran.
+* `Philippines`
+    * The most common grading scale in the Philippines.
 * `Russia` *(letter)*
     * The most common grading scale in Russia.
     * Either the full translated grade (`Excellent`, etc.) or the first letter of the translated grade (`E`, etc.) is accepted.
