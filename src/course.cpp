@@ -39,6 +39,14 @@ void Course::convertToLetter()
         letterGradePoints = convertChinaModified(givenGrade, scaleType);
         return;
     }
+    else if(scaleType == "Denmark")
+    {
+        letterGrade = convertDenmark(givenGrade, scaleType);
+    }
+    else if(scaleType == "ECTS")
+    {
+        letterGrade = convertECTS(givenGrade, scaleType);
+    }
     else if(scaleType == "Germany")
     {
         letterGrade = convertGermany(givenGrade, scaleType);
@@ -58,6 +66,10 @@ void Course::convertToLetter()
     else if(scaleType == "Iran")
     {
         letterGrade = convertIran(givenGrade, scaleType);
+    }
+    else if(scaleType == "Netherlands")
+    {
+        letterGrade = convertNetherlands(givenGrade, scaleType);
     }
     else if(scaleType == "Philippines")
     {
@@ -79,9 +91,13 @@ void Course::convertToLetter()
     {
         letterGrade = convertSouthKorea(givenGrade, scaleType);
     }
-    else if(scaleType == "Switzerland 6")
+    else if(scaleType == "Sweden")
     {
-        letterGrade = convertSwitzerland6(givenGrade, scaleType);
+        letterGrade = convertSweden(givenGrade, scaleType);
+    }
+    else if(scaleType == "Switzerland")
+    {
+        letterGrade = convertSwitzerland(givenGrade, scaleType);
     }
     else if(scaleType == "Taiwan")
     {

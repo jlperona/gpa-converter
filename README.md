@@ -25,52 +25,88 @@ The output file will be overwritten with the final GPA data. The ID number and s
 
 ### Grade Scales
 
-All grade scale conversions are credited to [ForeignCredits](http://www.foreigncredits.com/Resources/Grade-Conversion/). Grade scales convert number grades unless specified otherwise. The following grade scales have been implemented:
+All grade scale conversions are credited to [ForeignCredits](http://www.foreigncredits.com/Resources/Grade-Conversion/). The following grade scales have been implemented:
 
-* `Australia` *(letter)*
-    * The common post-secondary education grading scale in Australia.
+* `Australia`
+    * Post-secondary scale in Australia.
+    * Letter grades.
 * `Bangladesh`
-    * The most common grading scale in Bangladesh, the 100 point scale.
+    * Most common scale in Bangladesh.
+    * Grades range from 0 - 100.
 * `Canada British Columbia`
-    * The most common 100 point grading scale in British Columbia, Canada.
+    * Most common scale in British Columbia, Canada.
+    * Grades range from 0 - 100.
 * `Canada Ontario`
-    * The most common 100 point grading scale in Ontario, Canada.
+    * Most common scale in Ontario, Canada.
+    * Grades range from 0 - 100.
 * `China`
-    * The most common grading scale in China, the 100 point scale.
+    * Most common scale in China.
+    * Grades range from 0 - 100.
 * `China Modified`
-    * The most common grading scale in China, the 100 point scale.
-    * The conversion scale has been modified to use the one in use at UC Davis.
+    * Most common scale in China.
+        * The conversion scale has been modified to use the one in use at UC Davis.
+    * Grades range from 0 - 100.
+* `Denmark`
+    * Most common scale in Denmark.
+    * Grades range from 0 - 13.
+* `ECTS`
+    * European Credit Transfer System scale.
+    * Letter grades.
 * `Germany`
-    * The common tertiary education grading scale in Germany.
+    * Tertiary scale in Germany.
+    * Grades range from 1 - 6.
 * `India 10`
-    * The UGC 10 point scale used in India.
+    * UGC 10 point scale in India.
+    * Grades range from 0 - 10.
 * `India 100`
-    * The most common grading scale in India, the 100 point scale.
+    * Most common scale in India.
+    * Grades range from 0 - 100.
 * `India Marks`
-    * A variant of India 100, where the grade given is scaled to out of 100 by the units given.
-    * In this case, the units are assumed to be the maximum.
+    * Scale for certain universities in India.
+        * Useful when the university only uses marks and does not provide an equivalent to units.
+        * Uses the same scale as India 100.
+        * Calculates the percentage based on the units input being equal to 100%.
+        * For example, 200 units with a grade of 150 is equal to 150/200 = 75%.
+    * Grades range from 0 to the number of units input.
 * `Iran`
-    * The 20 point scale used in Iran.
+    * Most common scale in Iran.
+    * Grades range from 0 - 20.
+* `Netherlands`
+    * Most common scale in the Netherlands.
+    * Grades range from 0 - 12 or -3.
 * `Philippines`
-    * The most common grading scale in the Philippines.
-* `Russia` *(letter)*
-    * The most common grading scale in Russia.
-    * Either the full translated grade (`Excellent`, etc.) or the first letter of the translated grade (`E`, etc.) is accepted.
-* `Saudi Arabia` *(letter)*
-    * The most common grading scale in Saudi Arabia.
-* `Singapore` *(letter)*
-    * The most common grading scale in Singapore.
-* `South Korea` *(letter)*
-    * The most common grading scale in South Korea.
-* `Switzerland 6`
-    * The most common grading scale in Switzerland, the 6 point scale.
+    * Most common scale in the Philippines.
+    * Grades range from 1 - 5.
+* `Russia`
+    * Most common scale in Russia.
+    * Letter grades.
+        * Either the full translated grade (`Excellent`, etc.) or the first letter of the translated grade (`E`, etc.) is accepted.
+* `Saudi Arabia`
+    * University-level scale in Saudi Arabia.
+    * Letter grades.
+* `Singapore`
+    * Most common scale in Singapore.
+    * Letter grades.
+* `South Korea`
+    * Post-secondary scale in South Korea.
+    * Letter grades.
+* `Sweden`
+    * Most common scale in Sweden.
+    * Letter grades.
+* `Switzerland`
+    * Most common scale in Switzerland.
+    * Grades range from 0 - 6.
 * `Taiwan`
-    * The most common grading scale in Taiwan, the 100 point scale.
+    * Tertiary scale in Taiwan.
+    * Grades range from 0 - 100.
 * `United Kingdom`
-    * The most common grading scale in the United Kingdom, the 100 point scale.
-* `United States`, `Hong Kong`, or `Japan` *(letter)*
-    * United States letter grades.
-    * This scale also can convert the 4.3 grade scale commonly used in Taiwan, China, Japan, and Hong Kong.
+    * Most common scale in the United Kingdom.
+    * Grades range from 0 - 100.
+* `United States`, `Hong Kong`, or `Japan`
+    * 4.0 scale used in China, Hong Kong, Japan, Taiwan, and the United States.
+        * Assumes that A+ is equivalent to 4.0.
+        * Can also convert the 4.3 scale where A+ is equivalent to 4.3.
+    * Letter grades.
 
 The appropriate string above goes in the *Grade Scale Type* column for each student.
 
