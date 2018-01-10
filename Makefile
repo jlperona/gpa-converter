@@ -11,11 +11,17 @@ OBJ_DIR = ./obj
 SRC_DIR = ./src
 DAT_DIR = ./data
 
-OBJS = $(OBJ_DIR)/conversion.o \
-       $(OBJ_DIR)/course.o \
-       $(OBJ_DIR)/file.o \
-       $(OBJ_DIR)/main.o \
-       $(OBJ_DIR)/student.o
+OBJS = \
+	$(OBJ_DIR)/america.o \
+	$(OBJ_DIR)/asia.o \
+	$(OBJ_DIR)/conversion.o \
+	$(OBJ_DIR)/course.o \
+	$(OBJ_DIR)/europe.o \
+	$(OBJ_DIR)/file.o \
+	$(OBJ_DIR)/india.o \
+	$(OBJ_DIR)/main.o \
+	$(OBJ_DIR)/oceania.o \
+	$(OBJ_DIR)/student.o
 
 INCLUDES += -I$(INC_DIR)
 

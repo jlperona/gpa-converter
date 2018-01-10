@@ -4,15 +4,19 @@ A C++ program to take in student transcript data via CSV format, and convert it 
 
 ## Building
 
-Compile with `make`. No other libraries are necessary. If you'd like to change the compiler, edit the `CXX` variable in the Makefile.
+Compile with `make`.
+No other libraries are necessary.
+If you'd like to change the compiler, edit the `CXX` variable in the Makefile.
 
-The documentation uses Doxygen. Install it using your package manager. Building the documentation is as easy as `doxygen`.
+The documentation uses Doxygen. Install it using your package manager.
+Building the documentation is as easy as `doxygen`.
 
 ## Usage
 
     gpa-converter [--no-header] input.csv output.txt
 
-The input CSV file should not contain commas in the data fields, as this adds quotes into each field. The format of the file should look like this:
+The input CSV file should not contain commas in the data fields, as this adds quotes into each field.
+The format of the file should look like this:
 
     Header row will be ignored
     Student 1 ID Number, Secondary Identifier, Grade Scale Type, Class 1 Units, Class 1 Grade, Class 2 Units, Class 2 Grade, ...
@@ -21,11 +25,14 @@ The input CSV file should not contain commas in the data fields, as this adds qu
 
 Use `--no-header` if your data does not have a header row.
 
-The output file will be overwritten with the final GPA data. The ID number and secondary identifier can be anything. I use the secondary identifier to separate multiple transcripts for the same student.
+The output file will be overwritten with the final GPA data.
+The ID number and secondary identifier can be anything.
+I use the secondary identifier to separate multiple transcripts for the same student.
 
 ### Grade Scales
 
-All grade scale conversions are credited to [ForeignCredits](http://www.foreigncredits.com/Resources/Grade-Conversion/). The following grade scales have been implemented:
+All grade scale conversions are credited to [ForeignCredits](http://www.foreigncredits.com/Resources/Grade-Conversion/).
+The following grade scales have been implemented:
 
 * `Australia`
     * Post-secondary scale in Australia.
@@ -58,6 +65,7 @@ All grade scale conversions are credited to [ForeignCredits](http://www.foreignc
 * `India 10`
     * UGC 10 point scale in India.
     * Grades range from 0 - 10.
+    * *See next section for special information about this scale.*
 * `India 100`
     * Most common scale in India.
     * Grades range from 0 - 100.
@@ -110,11 +118,41 @@ All grade scale conversions are credited to [ForeignCredits](http://www.foreignc
 
 The appropriate string above goes in the *Grade Scale Type* column for each student.
 
-More will be added as I encounter them. If you have any that you would like to add, feel free to make a [pull request](https://github.com/jlperona/gpa-converter/pulls).
+More will be added as I encounter them.
+If you have any that you would like to add, feel free to make a [pull request](https://github.com/jlperona/gpa-converter/pulls).
+
+### Indian 10 Point Scale
+
+The Indian 10 point scale (`India 10` above) is somewhat unique, in that many universities use the 10 point scale, but add their own letter grades.
+Typing in letter grades is easier than doing the conversion manually, so there are grade scales that support each university's specific letter grades.
+
+Underneath each grade scale listed below is the university that utilizes it.
+
+* `India 10`
+    * All universities that report numbers instead of a letter grade.
+* `India 10 SABCDEFN`
+    * VIT University, among others.
+
+The table below lists what each letter in each scale corresponds to.
+
+| Scale | SABCDEFN |
+|-------|----------|
+| 10    | S        |
+| 9     | A        |
+| 8     | B        |
+| 7     | C        |
+| 6     | D        |
+| 5     | E        |
+| 4     |          |
+| 3     |          |
+| 2     |          |
+| 1     | F, N     |
 
 ## Motivation
 
-This was designed for personal use. Some sort of conversion needs to be done for non-US GPAs in order to be able to make fair comparisons between students. In the past, what was done at my workplace was:
+This was designed for personal use.
+Some sort of conversion needs to be done for non-US GPAs in order to be able to make fair comparisons between students.
+In the past, what was done at my workplace was:
 
 1. Take student transcript data
 2. Input it into a web app

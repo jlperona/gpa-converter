@@ -6,7 +6,12 @@
 #ifndef COURSE_HPP
 #define COURSE_HPP
 
+#include "america.hpp"
+#include "asia.hpp"
 #include "conversion.hpp"
+#include "europe.hpp"
+#include "india.hpp"
+#include "oceania.hpp"
 
 #include <algorithm>
 #include <iostream>
