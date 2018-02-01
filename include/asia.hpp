@@ -45,6 +45,36 @@ double convertChinaModified(std::string input, std::string gradeScale);
 std::string convertIran(std::string input, std::string gradeScale);
 
 /**
+ * Convert the 100 point scale in use for Nepal.
+ * This function accepts only strings, and passes the converted string to the overloaded double function to convert.
+ * \param input The input grade, expected to be a string between 0 - 100.
+ * \param gradeScale The grade scale name.
+ * \return The US letter grade equivalent.
+ */
+std::string convertNepal(std::string input, std::string gradeScale);
+
+/**
+ * Convert the 100 point scale in use for Nepal.
+ * This function does the conversion, as convertNepalMarks() also uses the 100 point scale.
+ * \param grade The input grade, expected to be between a double between 0 - 100.
+ * \param gradeScale The grade scale name.
+ * \return The US letter grade equivalent.
+ */
+std::string convertNepal(double grade, std::string gradeScale);
+
+/**
+ * Convert the 100 point scale in use for Nepal.
+ * The marks are considered the maximum grade, 100%.
+ * The input grade is then converted to be a percentage of the marks.
+ * The percentage is then passed to convertNepal() to get the final grade.
+ * \param input The input grade, expected to be between 0 and the number of marks.
+ * \param gradeScale The grade scale name.
+ * \param marks The number of marks for this class.
+ * \return The US letter grade equivalent.
+ */
+std::string convertNepalMarks(std::string input, std::string gradeScale, double marks);
+
+/**
  * Convert the scale in use for the Philippines.
  * \param input The input grade, expected to be between 1 - 5.
  * \param gradeScale The grade scale name.

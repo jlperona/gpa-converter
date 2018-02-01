@@ -71,6 +71,14 @@ void Course::convertToLetter()
     {
         letterGrade = convertIran(givenGrade, scaleType);
     }
+    else if(scaleType == "Nepal")
+    {
+        letterGrade = convertNepal(givenGrade, scaleType);
+    }
+    else if(scaleType == "Nepal Marks")
+    {
+        letterGrade = convertNepalMarks(givenGrade, scaleType, this->getUnits());
+    }
     else if(scaleType == "Netherlands")
     {
         letterGrade = convertNetherlands(givenGrade, scaleType);

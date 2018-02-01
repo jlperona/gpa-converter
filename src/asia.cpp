@@ -168,6 +168,72 @@ std::string convertIran(std::string input, std::string gradeScale)
     exit(EXIT_FAILURE);
 } // convertIran()
 
+std::string convertNepal(std::string input, std::string gradeScale)
+{
+    double grade = -1;
+
+    try // attempt to convert to number
+    {
+        grade = std::stod(input);
+    }
+    catch(const std::invalid_argument &e)
+    {
+        throwInvalidGradeError(input, gradeScale);
+    } // invalid grade
+
+    return convertNepal(grade, gradeScale);
+} // convertNepal(std::string)
+
+std::string convertNepal(double grade, std::string gradeScale)
+{
+    if(grade >= 60 && grade <= 100)
+    {
+        return "A";
+    }
+    else if(grade >= 46 && grade < 60)
+    {
+        return "B";
+    }
+    else if(grade >= 32 && grade < 46)
+    {
+        return "C";
+    }
+    else if(grade >= 0 && grade < 32)
+    {
+        return "F";
+    }
+    else // invalid
+    {
+        throwInvalidGradeError(std::to_string(grade), gradeScale);
+    }
+
+    exit(EXIT_FAILURE);
+} // convertNepal(double)
+
+std::string convertNepalMarks(std::string input, std::string gradeScale, double marks)
+{
+    double grade = -1;
+
+    try // attempt to convert to number
+    {
+        grade = std::stod(input);
+    }
+    catch(const std::invalid_argument &e)
+    {
+        throwInvalidGradeError(input, gradeScale);
+    } // invalid grade
+
+    if(grade < 0 || grade > marks)
+    {
+        throwInvalidGradeError(input, gradeScale);
+    } // out of bounds for this grade
+
+    // scale grade to out of 100
+    double scaledGrade = grade * 100 / marks;
+
+    return convertNepal(scaledGrade, gradeScale);
+} // convertNepalMarks()
+
 std::string convertPhilippines(std::string input, std::string gradeScale)
 {
     double grade = -1;

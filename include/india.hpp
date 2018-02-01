@@ -22,7 +22,7 @@ std::string convertIndia10(std::string input, std::string gradeScale);
 /**
  * Convert the UGC 10 point scale in use for India.
  * This function does the actual conversion.
- * \param input The input grade, expected to be a double between 0 - 10.
+ * \param grade The input grade, expected to be a double between 0 - 10.
  * \param gradeScale The grade scale name.
  * \return The US letter grade equivalent.
  */
