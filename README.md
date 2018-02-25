@@ -72,13 +72,23 @@ The following grade scales have been implemented:
 * `India Marks`
     * Scale for certain universities in India.
         * Useful when the university only uses marks and does not provide an equivalent to units.
-        * Uses the same scale as India 100.
+        * Uses the same scale as `India 100`.
         * Calculates the percentage based on the units input being equal to 100%.
         * For example, 200 units with a grade of 150 is equal to 150/200 = 75%.
     * Grades range from 0 to the number of units input.
 * `Iran`
     * Most common scale in Iran.
     * Grades range from 0 - 20.
+* `Nepal`
+    * Most common scale in Nepal.
+    * Grades range from 0 - 100.
+* `Nepal Marks`
+    * Scale for certain universities in Nepal.
+        * Useful when the university only uses marks and does not provide an equivalent to units.
+        * Uses the same scale as `Nepal`.
+        * Calculates the percentage based on the units input being equal to 100%.
+        * For example, 200 units with a grade of 150 is equal to 150/200 = 75%.
+    * Grades range from 0 to the number of units input.
 * `Netherlands`
     * Most common scale in the Netherlands.
     * Grades range from 0 - 12 or -3.
