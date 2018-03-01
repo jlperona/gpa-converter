@@ -6,6 +6,7 @@
 #ifndef COURSE_HPP
 #define COURSE_HPP
 
+#include "africa.hpp"
 #include "america.hpp"
 #include "asia.hpp"
 #include "conversion.hpp"

@@ -22,6 +22,10 @@ void Course::convertToLetter()
     {
         letterGrade = convertBangladesh(givenGrade, scaleType);
     }
+    else if(scaleType == "Bulgaria")
+    {
+        letterGrade = convertBulgaria(givenGrade, scaleType);
+    }
     else if(scaleType == "Canada British Columbia")
     {
         letterGrade = convertCanadaBritishColumbia(givenGrade, scaleType);
@@ -114,6 +118,10 @@ void Course::convertToLetter()
     else if(scaleType == "Taiwan")
     {
         letterGrade = convertTaiwan(givenGrade, scaleType);
+    }
+    else if(scaleType == "Uganda")
+    {
+        letterGrade = convertUganda(givenGrade, scaleType);
     }
     else if(scaleType == "United Kingdom")
     {

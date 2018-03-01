@@ -12,6 +12,7 @@ SRC_DIR = ./src
 DAT_DIR = ./data
 
 OBJS = \
+	$(OBJ_DIR)/africa.o \
 	$(OBJ_DIR)/america.o \
 	$(OBJ_DIR)/asia.o \
 	$(OBJ_DIR)/conversion.o \
@@ -25,7 +26,7 @@ OBJS = \
 
 INCLUDES += -I$(INC_DIR)
 
-CFLAGS = -Wall -Wextra -ansi -pedantic -std=c++11 $(INCLUDES)
+CFLAGS = -Wall -Wextra -std=c++11 $(INCLUDES)
 
 ifdef DEBUG_MODE
 	CFLAGS += -g

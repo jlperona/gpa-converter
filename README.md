@@ -40,6 +40,9 @@ The following grade scales have been implemented:
 * `Bangladesh`
     * Most common scale in Bangladesh.
     * Grades range from 0 - 100.
+* `Bulgaria`
+    * Most common scale in Bulgaria.
+    * Grades range from 2 - 6.
 * `Canada British Columbia`
     * Most common scale in British Columbia, Canada.
     * Grades range from 0 - 100.
@@ -117,6 +120,9 @@ The following grade scales have been implemented:
 * `Taiwan`
     * Tertiary scale in Taiwan.
     * Grades range from 0 - 100.
+* `Uganda`
+    * 9 point scale in Uganda.
+    * Grades range from 1 - 9.
 * `United Kingdom`
     * Most common scale in the United Kingdom.
     * Grades range from 0 - 100.
