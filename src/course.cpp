@@ -131,9 +131,13 @@ void Course::convertToLetter()
     {
         letterGrade = convertUnitedKingdom(givenGrade, scaleType);
     }
-    else if(scaleType == "United States" || scaleType == "Hong Kong" || scaleType == "Japan")
+    else if(scaleType == "United States" || scaleType == "Hong Kong")
     {
         letterGrade = convertUnitedStates(givenGrade, scaleType);
+    }
+    else if(scaleType == "Vietnam")
+    {
+        letterGrade = convertVietnam(givenGrade, scaleType);
     }
     else
     {

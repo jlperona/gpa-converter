@@ -130,5 +130,12 @@ std::string convertSouthKorea(std::string input, std::string gradeScale);
  */
 std::string convertTaiwan(std::string input, std::string gradeScale);
 
+/**
+ * Convert the scale in use for Vietnam.
+ * \param input The input grade, expected to be between 0 - 10.
+ * \param gradeScale The grade scale name.
+ * \return The US letter grade equivalent.
+ */
+std::string convertVietnam(std::string input, std::string gradeScale);
 
 #endif

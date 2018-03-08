@@ -134,6 +134,9 @@ The following grade scales have been implemented:
         * Assumes that A+ is equivalent to 4.0.
         * Can also convert the 4.3 scale where A+ is equivalent to 4.3.
     * Letter grades.
+* `Vietnam`
+    * Most common scale in Vietnam.
+    * Grades range from 0 - 10.
 
 The appropriate string above goes in the *Grade Scale Type* column for each student.
 

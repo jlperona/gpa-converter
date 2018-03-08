@@ -564,3 +564,51 @@ std::string convertTaiwan(std::string input, std::string gradeScale)
 
     exit(EXIT_FAILURE);
 } // convertTaiwan()
+
+std::string convertVietnam(std::string input, std::string gradeScale)
+{
+    double grade = -1;
+
+    try // attempt to convert to number
+    {
+        grade = std::stod(input);
+    }
+    catch(const std::invalid_argument &e)
+    {
+        throwInvalidGradeError(input, gradeScale);
+    } // invalid grade
+
+    if(grade >= 9 && grade <= 10)
+    {
+        return "A+";
+    }
+    else if(grade >= 8 && grade < 9)
+    {
+        return "A";
+    }
+    else if(grade >= 7 && grade < 8)
+    {
+        return "B+";
+    }
+    else if(grade >= 6 && grade < 7)
+    {
+        return "B";
+    }
+    else if(grade >= 5 && grade < 6)
+    {
+        return "C";
+    }
+    else if(grade >= 0 && grade < 5)
+    {
+        /* Note that there's a carve-out for a D here, but exactly when this applies is unclear.
+         * ForeignCredits says "with an overall average grade of at least 5.0."
+         * How this applies to one course isn't exactly clear, so assigning it to an F is safer. */
+        return "F";
+    }
+    else // invalid
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    exit(EXIT_FAILURE);
+} // convertVietnam()
