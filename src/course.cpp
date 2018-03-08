@@ -75,6 +75,10 @@ void Course::convertToLetter()
     {
         letterGrade = convertIran(givenGrade, scaleType);
     }
+    else if(scaleType == "Japan")
+    {
+        letterGrade = convertJapan(givenGrade, scaleType);
+    }
     else if(scaleType == "Nepal")
     {
         letterGrade = convertNepal(givenGrade, scaleType);

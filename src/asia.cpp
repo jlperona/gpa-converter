@@ -168,6 +168,47 @@ std::string convertIran(std::string input, std::string gradeScale)
     exit(EXIT_FAILURE);
 } // convertIran()
 
+std::string convertJapan(std::string input, std::string gradeScale)
+{
+    double grade = -1;
+
+    try // attempt to convert to number
+    {
+        grade = std::stod(input);
+    }
+    catch(const std::invalid_argument &e)
+    {
+        throwInvalidGradeError(input, gradeScale);
+    } // invalid grade
+
+    if(grade >= 90 && grade <= 100)
+    {
+        return "A+";
+    }
+    else if(grade >= 80 && grade < 90)
+    {
+        return "A";
+    }
+    else if(grade >= 70 && grade < 80)
+    {
+        return "B";
+    }
+    else if(grade >= 60 && grade < 70)
+    {
+        return "C";
+    }
+    else if(grade >= 0 && grade < 60)
+    {
+        return "F";
+    }
+    else // invalid
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    exit(EXIT_FAILURE);
+} // convertJapan()
+
 std::string convertNepal(std::string input, std::string gradeScale)
 {
     double grade = -1;

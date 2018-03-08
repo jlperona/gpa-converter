@@ -45,6 +45,14 @@ double convertChinaModified(std::string input, std::string gradeScale);
 std::string convertIran(std::string input, std::string gradeScale);
 
 /**
+ * Convert the scale in use for Japan.
+ * \param input The input grade, expected to be between 0 - 100.
+ * \param gradeScale The grade scale name.
+ * \return The US letter grade equivalent.
+ */
+std::string convertJapan(std::string input, std::string gradeScale);
+
+/**
  * Convert the 100 point scale in use for Nepal.
  * This function accepts only strings, and passes the converted string to the overloaded double function to convert.
  * \param input The input grade, expected to be a string between 0 - 100.

@@ -82,6 +82,9 @@ The following grade scales have been implemented:
 * `Iran`
     * Most common scale in Iran.
     * Grades range from 0 - 20.
+* `Japan`
+    * Number grades in Japan.
+    * Grades range from 0 - 100.
 * `Nepal`
     * Most common scale in Nepal.
     * Grades range from 0 - 100.
@@ -126,7 +129,7 @@ The following grade scales have been implemented:
 * `United Kingdom`
     * Most common scale in the United Kingdom.
     * Grades range from 0 - 100.
-* `United States`, `Hong Kong`, or `Japan`
+* `United States` or `Hong Kong`
     * 4.0 scale used in China, Hong Kong, Japan, Taiwan, and the United States.
         * Assumes that A+ is equivalent to 4.0.
         * Can also convert the 4.3 scale where A+ is equivalent to 4.3.
