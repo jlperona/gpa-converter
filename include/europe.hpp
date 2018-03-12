@@ -51,12 +51,20 @@ std::string convertGermany(std::string input, std::string gradeScale);
 std::string convertNetherlands(std::string input, std::string gradeScale);
 
 /**
- * Convert the scale in use for Sweden.
+ * Convert the most common scale in Sweden.
  * \param input The input grade.
  * \param gradeScale The grade scale name.
  * \return The US letter grade equivalent.
  */
 std::string convertSweden(std::string input, std::string gradeScale);
+
+/**
+ * Convert the five point scale in Sweden.
+ * \param input The input grade, expected to be between 1 - 5.
+ * \param gradeScale The grade scale name.
+ * \return The US letter grade equivalent.
+ */
+std::string convertSweden5(std::string input, std::string gradeScale);
 
 /**
  * Convert the scale in use for Switzerland.
