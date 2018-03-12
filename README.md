@@ -2,7 +2,7 @@
 
 A C++ program to take in student transcript data via CSV format, and convert it to a final GPA in the United States' 4.0 grading scale.
 
-## Building
+## Build
 
 Compile with `make`.
 No other libraries are necessary.
@@ -11,14 +11,14 @@ If you'd like to change the compiler, edit the `CXX` variable in the Makefile.
 The documentation uses Doxygen. Install it using your package manager.
 Building the documentation is as easy as `doxygen`.
 
-## Usage
+## Use
 
     gpa-converter [--no-header] input.csv output.txt
 
 The input CSV file should not contain commas in the data fields, as this adds quotes into each field.
 The format of the file should look like this:
 
-    Header row will be ignored
+    Header row will be ignored.
     Student 1 ID Number, Secondary Identifier, Grade Scale Type, Class 1 Units, Class 1 Grade, Class 2 Units, Class 2 Grade, ...
     Student 2 ID Number, Secondary Identifier, Grade Scale Type, ...
     ...
@@ -29,60 +29,53 @@ The output file will be overwritten with the final GPA data.
 The ID number and secondary identifier can be anything.
 I use the secondary identifier to separate multiple transcripts for the same student.
 
-### Grade Scales
+## Grade Scales
 
 All grade scale conversions are credited to [ForeignCredits](http://www.foreigncredits.com/Resources/Grade-Conversion/).
+The appropriate string below goes in the *Grade Scale Type* column for each student.
+
 The following grade scales have been implemented:
 
-* `Australia`
-    * Post-secondary scale in Australia.
+### Africa
+
+* `Uganda`
+    * 9 point scale in Uganda.
+    * Grades range from 1 - 9.
+
+### America
+
+* `Canada`
+    * Alias of `United States`.
+    * See `United States` below for more information.
     * Letter grades.
-* `Australia New South Wales`
-    * Most common scale in New South Wales, Australia.
-    * Grades range from 0 - 100.
-    * For letter grades, use `Australia` above.
-* `Bangladesh`
-    * Most common scale in Bangladesh.
-    * Grades range from 0 - 100.
-* `Bulgaria`
-    * Most common scale in Bulgaria.
-    * Grades range from 2 - 6.
 * `Canada British Columbia`
     * Most common scale in British Columbia, Canada.
     * Grades range from 0 - 100.
 * `Canada Ontario`
     * Most common scale in Ontario, Canada.
     * Grades range from 0 - 100.
+* `United States`
+    * 4.0 scale used in the United States.
+    * Also used in Canada, China, Hong Kong, Japan, and Taiwan.
+        * Assumes that A+ is equivalent to 4.0.
+        * Can also convert the 4.3 scale where A+ is equivalent to 4.3.
+    * Letter grades.
+
+### Asia (excluding India)
+
+* `Bangladesh`
+    * Most common scale in Bangladesh.
+    * Grades range from 0 - 100.
 * `China`
     * Most common scale in China.
     * Grades range from 0 - 100.
 * `China Modified`
-    * Most common scale in China.
-        * The conversion scale has been modified to use the one in use at UC Davis.
+    * The Chinese conversion scale has been modified to use the one in use at UC Davis.
     * Grades range from 0 - 100.
-* `Denmark`
-    * Most common scale in Denmark.
-    * Grades range from 0 - 13.
-* `ECTS`
-    * European Credit Transfer System scale.
+* `Hong Kong`
+    * Alias of `United States`.
+    * See `United States` above for more information.
     * Letter grades.
-* `Germany`
-    * Tertiary scale in Germany.
-    * Grades range from 1 - 6.
-* `India 10`
-    * UGC 10 point scale in India.
-    * Grades range from 0 - 10.
-    * *See next section for special information about this scale.*
-* `India 100`
-    * Most common scale in India.
-    * Grades range from 0 - 100.
-* `India Marks`
-    * Scale for certain universities in India.
-        * Useful when the university only uses marks and does not provide an equivalent to units.
-        * Uses the same scale as `India 100`.
-        * Calculates the percentage based on the units input being equal to 100%.
-        * For example, 200 units with a grade of 150 is equal to 150/200 = 75%.
-    * Grades range from 0 to the number of units input.
 * `Iran`
     * Most common scale in Iran.
     * Grades range from 0 - 20.
@@ -99,16 +92,13 @@ The following grade scales have been implemented:
         * Calculates the percentage based on the units input being equal to 100%.
         * For example, 200 units with a grade of 150 is equal to 150/200 = 75%.
     * Grades range from 0 to the number of units input.
-* `Netherlands`
-    * Most common scale in the Netherlands.
-    * Grades range from 0 - 12 or -3.
 * `Philippines`
     * Most common scale in the Philippines.
     * Grades range from 1 - 5.
 * `Russia`
     * Most common scale in Russia.
     * Letter grades.
-        * Either the full translated grade (`Excellent`, etc.) or the first letter of the translated grade (`E`, etc.) is accepted.
+    * Either the full translated grade (`Excellent`, etc.) or the first letter of the translated grade (`E`, etc.) is accepted.
 * `Saudi Arabia`
     * University-level scale in Saudi Arabia.
     * Letter grades.
@@ -118,6 +108,30 @@ The following grade scales have been implemented:
 * `South Korea`
     * Post-secondary scale in South Korea.
     * Letter grades.
+* `Taiwan`
+    * Tertiary scale in Taiwan.
+    * Grades range from 0 - 100.
+* `Vietnam`
+    * Most common scale in Vietnam.
+    * Grades range from 0 - 10.
+
+### Europe
+
+* `Bulgaria`
+    * Most common scale in Bulgaria.
+    * Grades range from 2 - 6.
+* `Denmark`
+    * Most common scale in Denmark.
+    * Grades range from 0 - 13.
+* `ECTS`
+    * European Credit Transfer System scale.
+    * Letter grades.
+* `Germany`
+    * Tertiary scale in Germany.
+    * Grades range from 1 - 6.
+* `Netherlands`
+    * Most common scale in the Netherlands.
+    * Grades range from 0 - 12 or -3.
 * `Sweden`
     * Most common scale in Sweden.
     * Letter grades.
@@ -127,28 +141,36 @@ The following grade scales have been implemented:
 * `Switzerland`
     * Most common scale in Switzerland.
     * Grades range from 0 - 6.
-* `Taiwan`
-    * Tertiary scale in Taiwan.
-    * Grades range from 0 - 100.
-* `Uganda`
-    * 9 point scale in Uganda.
-    * Grades range from 1 - 9.
 * `United Kingdom`
     * Most common scale in the United Kingdom.
     * Grades range from 0 - 100.
-* `United States`, `Canada`, or `Hong Kong`
-    * 4.0 scale used in Canada, China, Hong Kong, Japan, Taiwan, and the United States.
-        * Assumes that A+ is equivalent to 4.0.
-        * Can also convert the 4.3 scale where A+ is equivalent to 4.3.
-    * Letter grades.
-* `Vietnam`
-    * Most common scale in Vietnam.
+
+### India
+
+* `India 10`
+    * UGC 10 point scale in India.
     * Grades range from 0 - 10.
+    * *See below for special information about this scale.*
+* `India 100`
+    * Most common scale in India.
+    * Grades range from 0 - 100.
+* `India Marks`
+    * Scale for certain universities in India.
+        * Useful when the university only uses marks and does not provide an equivalent to units.
+        * Uses the same scale as `India 100`.
+        * Calculates the percentage based on the units input being equal to 100%.
+        * For example, 200 units with a grade of 150 is equal to 150/200 = 75%.
+    * Grades range from 0 to the number of units input.
 
-The appropriate string above goes in the *Grade Scale Type* column for each student.
+### Oceania
 
-More will be added as I encounter them.
-If you have any that you would like to add, feel free to make a [pull request](https://github.com/jlperona/gpa-converter/pulls).
+* `Australia`
+    * Post-secondary scale in Australia.
+    * Letter grades.
+* `Australia New South Wales`
+    * Most common scale in New South Wales, Australia.
+    * Grades range from 0 - 100.
+    * For letter grades, use `Australia` above.
 
 ### Indian 10 Point Scale
 
@@ -211,6 +233,22 @@ This seemed inefficient. This app helps speed the process along.
 
 ## Future
 
-Some of my future goals for this program:
+I intend to add more grade scales as I encounter them.
 
-* Add more grade scales as I encounter them
+### Pull Requests
+
+If you have any that you would like to add, feel free to make a [pull request](https://github.com/jlperona/gpa-converter/pulls).
+
+### Adding a New Scale
+
+If you would like to see a clean example of how to add a new grade scale, the [commit for Sweden 5](https://github.com/jlperona/gpa-converter/commit/cc9e422af9b546d0b225ee88421cac10523af439) shows all the steps necessary to add a new scale.
+
+Below are the steps to add a new scale:
+
+1. Create the function in the appropriate country `.cpp` file.
+    * Function names should be in the form of `convertCountry()`.
+    * Copying the style of other functions is encouraged.
+2. Create the prototype and documentation in the appropriate country `.hpp` file.
+    * Again, copying the style and documentation of other functions is encouraged.
+3. Update `Course::convertToLetter()` in `course.cpp` to add the scale.
+4. Update the README (this document) to list the new scale.
