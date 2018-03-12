@@ -37,6 +37,10 @@ The following grade scales have been implemented:
 * `Australia`
     * Post-secondary scale in Australia.
     * Letter grades.
+* `Australia New South Wales`
+    * Most common scale in New South Wales, Australia.
+    * Grades range from 0 - 100.
+    * For letter grades, use `Australia` above.
 * `Bangladesh`
     * Most common scale in Bangladesh.
     * Grades range from 0 - 100.
@@ -129,8 +133,8 @@ The following grade scales have been implemented:
 * `United Kingdom`
     * Most common scale in the United Kingdom.
     * Grades range from 0 - 100.
-* `United States` or `Hong Kong`
-    * 4.0 scale used in China, Hong Kong, Japan, Taiwan, and the United States.
+* `United States`, `Canada`, or `Hong Kong`
+    * 4.0 scale used in Canada, China, Hong Kong, Japan, Taiwan, and the United States.
         * Assumes that A+ is equivalent to 4.0.
         * Can also convert the 4.3 scale where A+ is equivalent to 4.3.
     * Letter grades.

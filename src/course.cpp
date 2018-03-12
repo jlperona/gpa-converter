@@ -18,6 +18,10 @@ void Course::convertToLetter()
     {
         letterGrade = convertAustralia(givenGrade, scaleType);
     }
+    else if(scaleType == "Australia New South Wales")
+    {
+        letterGrade = convertAustraliaNewSouthWales(givenGrade, scaleType);
+    }
     else if(scaleType == "Bangladesh")
     {
         letterGrade = convertBangladesh(givenGrade, scaleType);
@@ -131,7 +135,7 @@ void Course::convertToLetter()
     {
         letterGrade = convertUnitedKingdom(givenGrade, scaleType);
     }
-    else if(scaleType == "United States" || scaleType == "Hong Kong")
+    else if(scaleType == "United States" || scaleType == "Hong Kong" || scaleType == "Canada")
     {
         letterGrade = convertUnitedStates(givenGrade, scaleType);
     }

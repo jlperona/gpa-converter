@@ -18,4 +18,12 @@
  */
 std::string convertAustralia(std::string input, std::string gradeScale);
 
+/**
+ * Convert the scale in use for New South Wales in Australia.
+ * \param input The input grade, expected to be between 0 - 100.
+ * \param gradeScale The grade scale name.
+ * \return The US letter grade equivalent.
+ */
+std::string convertAustraliaNewSouthWales(std::string input, std::string gradeScale);
+
 #endif
