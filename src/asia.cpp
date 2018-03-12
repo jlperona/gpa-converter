@@ -434,6 +434,12 @@ std::string convertSingapore(std::string input, std::string gradeScale)
     {
         return "B";
     }
+    /* While ForeignCredits doesn't have this grade listed on their website,
+     * National University of Singapore uses it. */
+    else if(input == "B-")
+    {
+        return "B-";
+    }
     else if(input == "C+")
     {
         return "C+";
@@ -442,6 +448,12 @@ std::string convertSingapore(std::string input, std::string gradeScale)
     {
         return "C";
     }
+    /* While ForeignCredits doesn't have this grade listed on their website,
+     * National University of Singapore uses it. */
+    else if(input == "C-")
+    {
+        return "C-";
+    }
     else if(input == "D+")
     {
         return "C-";
@@ -449,6 +461,12 @@ std::string convertSingapore(std::string input, std::string gradeScale)
     else if(input == "D")
     {
         return "D";
+    }
+    /* While ForeignCredits doesn't have this grade listed on their website,
+     * National University of Singapore uses it. */
+    else if(input == "D-")
+    {
+        return "D-";
     }
     else if(input == "F")
     {
