@@ -4,6 +4,32 @@
 
 #include "america.hpp"
 
+std::string convertBrazil(std::string input, std::string gradeScale)
+{
+    if(input == "SS")
+    {
+        return "A";
+    }
+    else if(input == "MS")
+    {
+        return "B";
+    }
+    else if(input == "MM")
+    {
+        return "C";
+    }
+    else if(input == "MI" || input == "II")
+    {
+        return "F";
+    }
+    else
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    exit(EXIT_FAILURE);
+} // convertBrazil()
+
 std::string convertCanadaBritishColumbia(std::string input, std::string gradeScale)
 {
     double grade = -1;

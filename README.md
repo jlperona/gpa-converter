@@ -44,6 +44,9 @@ The following grade scales have been implemented:
 
 ### America
 
+* `Brazil`
+    * Double letter grade scale used in Brazil.
+    * Letter grades.
 * `Canada`
     * Alias of `United States`.
     * See `United States` below for more information.
