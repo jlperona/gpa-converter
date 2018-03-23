@@ -43,6 +43,14 @@ std::string convertCanadaBritishColumbia(std::string input, std::string gradeSca
 std::string convertCanadaOntario(std::string input, std::string gradeScale);
 
 /**
+ * Convert the scale in use for Peru.
+ * \param input The input grade, expected to be between 0 - 20.
+ * \param gradeScale The grade scale name.
+ * \return The US letter grade equivalent.
+ */
+std::string convertPeru(std::string input, std::string gradeScale);
+
+/**
  * Convert the scale in use for the United States. Note that since there is a routine to do this already,
  * this function is limited to verification of inputted grades.
  * \param input The input grade.

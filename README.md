@@ -63,6 +63,9 @@ The following grade scales have been implemented:
 * `Canada Ontario`
     * Most common scale in Ontario, Canada.
     * Grades range from 0 - 100.
+* `Peru`
+    * Most common scale in Peru.
+    * Grades range from 0 - 20.
 * `United States`
     * 4.0 scale used in the United States.
     * Also used in Canada, China, Hong Kong, Japan, and Taiwan.
