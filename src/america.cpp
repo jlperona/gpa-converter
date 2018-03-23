@@ -181,6 +181,43 @@ std::string convertCanadaOntario(std::string input, std::string gradeScale)
     exit(EXIT_FAILURE);
 } // convertCanadaOntario()
 
+std::string convertMexico(std::string input, std::string gradeScale)
+{
+    double grade = -1;
+
+    try // attempt to convert to number
+    {
+        grade = std::stod(input);
+    }
+    catch(const std::invalid_argument &e)
+    {
+        throwInvalidGradeError(input, gradeScale);
+    } // invalid grade
+
+    if(grade >= 9 && grade <= 10)
+    {
+        return "A";
+    }
+    else if(grade >= 8 && grade < 9)
+    {
+        return "B";
+    }
+    else if(grade >= 6 && grade < 8)
+    {
+        return "C";
+    }
+    else if(grade >= 0 && grade < 6)
+    {
+        return "F";
+    }
+    else // invalid
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    exit(EXIT_FAILURE);
+} // convertMexico()
+
 std::string convertPeru(std::string input, std::string gradeScale)
 {
     double grade = -1;

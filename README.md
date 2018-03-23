@@ -63,6 +63,9 @@ The following grade scales have been implemented:
 * `Canada Ontario`
     * Most common scale in Ontario, Canada.
     * Grades range from 0 - 100.
+* `Mexico`
+    * Tertiary scale with 6 as passing.
+    * Grades range from 0 - 10.
 * `Peru`
     * Most common scale in Peru.
     * Grades range from 0 - 20.
