@@ -445,3 +445,69 @@ std::string convertUnitedKingdom(std::string input, std::string gradeScale)
 
     exit(EXIT_FAILURE);
 } // convertUnitedKingdom()
+
+std::string convertUniversityOfGlasgow(std::string input, std::string gradeScale)
+{
+    /* See the following PDF provided by the University of Glasgow for the conversion.
+     * https://www.gla.ac.uk/media/media_489840_en.pdf */
+
+    if(input == "A1" || input == "A2")
+    {
+        return "A+";
+    }
+    else if(input == "A3" || input == "A4")
+    {
+        return "A";
+    }
+    else if(input == "A5")
+    {
+        return "A-";
+    }
+    else if(input == "B1")
+    {
+        return "B+";
+    }
+    else if(input == "B2")
+    {
+        return "B";
+    }
+    else if(input == "B3")
+    {
+        return "B-";
+    }
+    else if(input == "C1")
+    {
+        return "C+";
+    }
+    else if(input == "C2")
+    {
+        return "C";
+    }
+    else if(input == "C3")
+    {
+        return "C-";
+    }
+    else if(input == "D1")
+    {
+        return "D+";
+    }
+    else if(input == "D2")
+    {
+        return "D";
+    }
+    else if(input == "D3" || input == "E1")
+    {
+        return "D-";
+    }
+    else if(input == "E2" || input == "E3" || input == "F1" || input == "F2"
+        || input == "F3" || input == "G1" || input == "G2")
+    {
+        return "F";
+    }
+    else // invalid
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    exit(EXIT_FAILURE);
+} // convertUniversityOfGlasgow()

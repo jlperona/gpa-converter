@@ -98,4 +98,13 @@ std::string convertSwitzerland(std::string input, std::string gradeScale);
  */
 std::string convertUnitedKingdom(std::string input, std::string gradeScale);
 
+/**
+ * Convert the scale in use for the University of Glasgow in Scotland.
+ * They don't appear to follow the typical Scottish grade scale.
+ * \param input The input grade.
+ * \param gradeScale The grade scale name.
+ * \return The US letter grade equivalent.
+ */
+std::string convertUniversityOfGlasgow(std::string input, std::string gradeScale);
+
 #endif

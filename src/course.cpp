@@ -155,6 +155,10 @@ void Course::convertToLetter()
     {
         letterGrade = convertUnitedStates(givenGrade, scaleType);
     }
+    else if(scaleType == "University of Glasgow")
+    {
+        letterGrade = convertUniversityOfGlasgow(givenGrade, scaleType);
+    }
     else if(scaleType == "Vietnam")
     {
         letterGrade = convertVietnam(givenGrade, scaleType);

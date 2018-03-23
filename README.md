@@ -153,6 +153,9 @@ The following grade scales have been implemented:
 * `United Kingdom`
     * Most common scale in the United Kingdom.
     * Grades range from 0 - 100.
+* `University of Glasgow`
+    * Scale specifically for University of Glasgow in Scotland.
+    * Letter grades.
 
 ### India
 
