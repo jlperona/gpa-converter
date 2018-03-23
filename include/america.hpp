@@ -16,7 +16,7 @@
  * \param gradeScale The grade scale name.
  * \return The US letter grade equivalent.
  */
-std::string convertBrazil(std::string input, std::string gradeScale);
+std::string convertBrazilDouble(std::string input, std::string gradeScale);
 
 /**
  * Convert the scale in use for British Columbia, Canada.

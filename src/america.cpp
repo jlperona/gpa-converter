@@ -4,7 +4,7 @@
 
 #include "america.hpp"
 
-std::string convertBrazil(std::string input, std::string gradeScale)
+std::string convertBrazilDouble(std::string input, std::string gradeScale)
 {
     if(input == "SS")
     {
@@ -28,7 +28,7 @@ std::string convertBrazil(std::string input, std::string gradeScale)
     }
 
     exit(EXIT_FAILURE);
-} // convertBrazil()
+} // convertBrazilDouble()
 
 std::string convertCanadaBritishColumbia(std::string input, std::string gradeScale)
 {
