@@ -132,6 +132,9 @@ The following grade scales have been implemented:
 * `Germany`
     * Tertiary scale in Germany.
     * Grades range from 1 - 6.
+* `Greece`
+    * Most common scale in Greece.
+    * Grades range from 0 - 10.
 * `Netherlands`
     * Most common scale in the Netherlands.
     * Grades range from 0 - 12 or -3.

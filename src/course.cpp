@@ -63,6 +63,10 @@ void Course::convertToLetter()
     {
         letterGrade = convertGermany(givenGrade, scaleType);
     }
+    else if(scaleType == "Greece")
+    {
+        letterGrade = convertGreece(givenGrade, scaleType);
+    }
     else if(scaleType == "India 10")
     {
         letterGrade = convertIndia10(givenGrade, scaleType);
