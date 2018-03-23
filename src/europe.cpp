@@ -162,7 +162,6 @@ std::string convertGermany(std::string input, std::string gradeScale)
     exit(EXIT_FAILURE);
 } // convertGermany()
 
-
 std::string convertNetherlands(std::string input, std::string gradeScale)
 {
     double grade = -1;
@@ -207,6 +206,55 @@ std::string convertNetherlands(std::string input, std::string gradeScale)
 
     exit(EXIT_FAILURE);
 } // convertNetherlands()
+
+std::string convertSpain(std::string input, std::string gradeScale)
+{
+    double grade = -1;
+
+    try // attempt to convert to number
+    {
+        grade = std::stod(input);
+    }
+    catch(const std::invalid_argument &e)
+    {
+        throwInvalidGradeError(input, gradeScale);
+    } // invalid grade
+
+    if(grade == 10)
+    {
+        return "A+";
+    }
+    else if(grade >= 9 && grade < 10)
+    {
+        return "A";
+    }
+    else if(grade >= 7 && grade < 9)
+    {
+        return "B+";
+    }
+    else if(grade >= 6 && grade < 7)
+    {
+        return "B";
+    }
+    else if(grade >= 5.5 && grade < 6)
+    {
+        return "B-";
+    }
+    else if(grade >= 5 && grade < 5.5)
+    {
+        return "C";
+    }
+    else if(grade >= 0 && grade < 5)
+    {
+        return "F";
+    }
+    else // invalid
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    exit(EXIT_FAILURE);
+} // convertSpain()
 
 std::string convertSweden(std::string input, std::string gradeScale)
 {

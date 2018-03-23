@@ -119,6 +119,10 @@ void Course::convertToLetter()
     {
         letterGrade = convertSouthKorea(givenGrade, scaleType);
     }
+    else if(scaleType == "Spain")
+    {
+        letterGrade = convertSpain(givenGrade, scaleType);
+    }
     else if(scaleType == "Sweden")
     {
         letterGrade = convertSweden(givenGrade, scaleType);
