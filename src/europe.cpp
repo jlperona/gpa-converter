@@ -125,6 +125,51 @@ std::string convertECTS(std::string input, std::string gradeScale)
     exit(EXIT_FAILURE);
 } // convertECTS()
 
+std::string convertFrance(std::string input, std::string gradeScale)
+{
+    double grade = -1;
+
+    try // attempt to convert to number
+    {
+        grade = std::stod(input);
+    }
+    catch(const std::invalid_argument &e)
+    {
+        throwInvalidGradeError(input, gradeScale);
+    } // invalid grade
+
+    if(grade >= 16 && grade <= 20)
+    {
+        return "A+";
+    }
+    else if(grade >= 14 && grade < 16)
+    {
+        return "A";
+    }
+    else if(grade >= 12 && grade < 14)
+    {
+        return "B";
+    }
+    else if(grade >= 10 && grade < 12)
+    {
+        return "C";
+    }
+    else if(grade >= 8 && grade < 10)
+    {
+        return "D";
+    }
+    else if(grade >= 0 && grade < 8)
+    {
+        return "F";
+    }
+    else // invalid
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    exit(EXIT_FAILURE);
+} // convertFrance()
+
 std::string convertGermany(std::string input, std::string gradeScale)
 {
     double grade = -1;

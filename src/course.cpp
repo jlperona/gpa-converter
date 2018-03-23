@@ -63,6 +63,10 @@ void Course::convertToLetter()
     {
         letterGrade = convertECTS(givenGrade, scaleType);
     }
+    else if(scaleType == "France")
+    {
+        letterGrade = convertFrance(givenGrade, scaleType);
+    }
     else if(scaleType == "Germany")
     {
         letterGrade = convertGermany(givenGrade, scaleType);

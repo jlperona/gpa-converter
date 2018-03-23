@@ -35,6 +35,14 @@ std::string convertDenmark(std::string input, std::string gradeScale);
 std::string convertECTS(std::string input, std::string gradeScale);
 
 /**
+ * Convert the scale in use for France.
+ * \param input The input grade, expected to be between 0 - 20.
+ * \param gradeScale The grade scale name.
+ * \return The US letter grade equivalent.
+ */
+std::string convertFrance(std::string input, std::string gradeScale);
+
+/**
  * Convert the scale in use for Germany.
  * \param input The input grade, expected to be between 1 - 6.
  * \param gradeScale The grade scale name.
