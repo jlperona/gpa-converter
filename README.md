@@ -44,6 +44,9 @@ The following grade scales have been implemented:
 
 ### America
 
+* `Brazil`
+    * Most common grade scale in Brazil.
+    * Grades range from 0 - 100.
 * `Brazil Double`
     * Double letter grade scale used in Brazil.
     * Letter grades.

@@ -4,6 +4,47 @@
 
 #include "america.hpp"
 
+std::string convertBrazil(std::string input, std::string gradeScale)
+{
+    double grade = -1;
+
+    try // attempt to convert to number
+    {
+        grade = std::stod(input);
+    }
+    catch(const std::invalid_argument &e)
+    {
+        throwInvalidGradeError(input, gradeScale);
+    } // invalid grade
+
+    if(grade >= 90 && grade <= 100)
+    {
+        return "A";
+    }
+    else if(grade >= 70 && grade < 90)
+    {
+        return "B";
+    }
+    else if(grade >= 50 && grade < 70)
+    {
+        return "C";
+    }
+    else if(grade >= 30 && grade < 50)
+    {
+        return "D";
+    }
+    else if(grade >= 0 && grade < 30)
+    {
+        return "F";
+    }
+    else // invalid
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    exit(EXIT_FAILURE);
+} // convertBrazil()
+
 std::string convertBrazilDouble(std::string input, std::string gradeScale)
 {
     if(input == "SS")

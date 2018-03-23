@@ -11,6 +11,14 @@
 #include <string>
 
 /**
+ * Convert the scale in use for Brazil.
+ * \param input The input grade.
+ * \param gradeScale The grade scale name.
+ * \return The US letter grade equivalent.
+ */
+std::string convertBrazil(std::string input, std::string gradeScale);
+
+/**
  * Convert the double letter grade scale in use for Brazil.
  * \param input The input grade.
  * \param gradeScale The grade scale name.
