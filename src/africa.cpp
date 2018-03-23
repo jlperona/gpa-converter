@@ -4,6 +4,40 @@
 
 #include "africa.hpp"
 
+std::string convertNigeria(std::string input, std::string gradeScale)
+{
+    if(input == "A" || input == "AB")
+    {
+        return "A";
+    }
+    else if(input == "B" || input == "BC")
+    {
+        return "B+";
+    }
+    else if(input == "C" || input == "CD")
+    {
+        return "B";
+    }
+    else if(input == "D")
+    {
+        return "C+";
+    }
+    else if(input == "E")
+    {
+        return "C";
+    }
+    else if(input == "F")
+    {
+        return "F";
+    }
+    else
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    exit(EXIT_FAILURE);
+} // convertNigeria()
+
 std::string convertUganda(std::string input, std::string gradeScale)
 {
     double grade = -1;

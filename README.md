@@ -38,6 +38,9 @@ The following grade scales have been implemented:
 
 ### Africa
 
+* `Nigeria`
+    * Most common scale in Nigeria.
+    * Letter grades.
 * `Uganda`
     * 9 point scale in Uganda.
     * Grades range from 1 - 9.
