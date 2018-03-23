@@ -138,6 +138,9 @@ The following grade scales have been implemented:
 * `Greece`
     * Most common scale in Greece.
     * Grades range from 0 - 10.
+* `Ireland`
+    * Most common scale in Ireland.
+    * Grades range from 0 - 100.
 * `Netherlands`
     * Most common scale in the Netherlands.
     * Grades range from 0 - 12 or -3.

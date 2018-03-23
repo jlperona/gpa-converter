@@ -91,6 +91,10 @@ void Course::convertToLetter()
     {
         letterGrade = convertIran(givenGrade, scaleType);
     }
+    else if(scaleType == "Ireland")
+    {
+        letterGrade = convertIreland(givenGrade, scaleType);
+    }
     else if(scaleType == "Japan")
     {
         letterGrade = convertJapan(givenGrade, scaleType);
