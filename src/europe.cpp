@@ -35,11 +35,11 @@ std::string convertBelgium(std::string input, std::string gradeScale)
     }
     else if(grade >= 10 && grade < 12)
     {
-        return "C";
+        return "C-";
     }
     else if(grade >= 0 && grade < 10)
     {
-        return "C";
+        return "F";
     }
     else // invalid
     {
