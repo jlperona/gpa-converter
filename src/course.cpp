@@ -26,6 +26,10 @@ void Course::convertToLetter()
     {
         letterGrade = convertBangladesh(givenGrade, scaleType);
     }
+    else if(scaleType == "Belgium")
+    {
+        letterGrade = convertBelgium(givenGrade, scaleType);
+    }
     else if(scaleType == "Bulgaria")
     {
         letterGrade = convertBulgaria(givenGrade, scaleType);

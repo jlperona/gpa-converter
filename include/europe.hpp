@@ -11,6 +11,14 @@
 #include <string>
 
 /**
+ * Convert the scale in use for Belgium.
+ * \param input The input grade, expected to be between 0 - 20.
+ * \param gradeScale The grade scale name.
+ * \return The US letter grade equivalent.
+ */
+std::string convertBelgium(std::string input, std::string gradeScale);
+
+/**
  * Convert the scale in use for Bulgaria.
  * \param input The input grade, expected to be between 2 - 6.
  * \param gradeScale The grade scale name.

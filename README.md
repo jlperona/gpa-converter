@@ -132,6 +132,9 @@ The following grade scales have been implemented:
 
 ### Europe
 
+* `Belgium`
+    * Most common scale in Belgium.
+    * Grades range from 0 - 20.
 * `Bulgaria`
     * Most common scale in Bulgaria.
     * Grades range from 2 - 6.
