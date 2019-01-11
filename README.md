@@ -159,6 +159,9 @@ The following grade scales have been implemented:
 * `Netherlands`
     * Most common scale in the Netherlands.
     * Grades range from 0 - 12 or -3.
+* `Romania`
+    * Most common scale in Romania.
+    * Grades range from 0 - 10.
 * `Spain`
     * Most common scale in Spain.
     * Grades range from 0 - 10.

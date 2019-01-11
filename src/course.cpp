@@ -135,6 +135,10 @@ void Course::convertToLetter()
     {
         letterGrade = convertPhilippines(givenGrade, scaleType);
     }
+    else if(scaleType == "Romania")
+    {
+        letterGrade = convertRomania(givenGrade, scaleType);
+    }
     else if(scaleType == "Russia")
     {
         letterGrade = convertRussia(givenGrade, scaleType);
