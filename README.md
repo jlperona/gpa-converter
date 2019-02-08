@@ -50,9 +50,13 @@ The following grade scales have been implemented:
 * `Brazil`
     * Most common grade scale in Brazil.
     * Grades range from 0 - 100.
+* `Brazil Single`
+    * Alias of `United States`.
+    * See `United States` below for more information.
+    * Single letter grades.
 * `Brazil Double`
     * Double letter grade scale used in Brazil.
-    * Letter grades.
+    * Double letter grades.
 * `Canada`
     * Alias of `United States`.
     * See `United States` below for more information.

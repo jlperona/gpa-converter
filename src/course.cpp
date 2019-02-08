@@ -183,7 +183,7 @@ void Course::convertToLetter()
     {
         letterGrade = convertUnitedKingdom(givenGrade, scaleType);
     }
-    else if(scaleType == "United States" || scaleType == "Hong Kong" || scaleType == "Canada")
+    else if(scaleType == "United States" || scaleType == "Hong Kong" || scaleType == "Canada" || scaleType == "Brazil Single")
     {
         letterGrade = convertUnitedStates(givenGrade, scaleType);
     }
