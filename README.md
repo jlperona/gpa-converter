@@ -41,6 +41,9 @@ The following grade scales have been implemented:
 * `Nigeria`
     * Most common scale in Nigeria.
     * Letter grades.
+* `South Africa`
+    * Most common scale in South Africa.
+    * Grades range from 0 - 100.
 * `Uganda`
     * 9 point scale in Uganda.
     * Grades range from 1 - 9.
@@ -75,7 +78,7 @@ The following grade scales have been implemented:
     * Grades range from 0 - 20.
 * `United States`
     * 4.0 scale used in the United States.
-    * Also used in Canada, China, Hong Kong, Japan, and Taiwan.
+    * Also used in Brazil, Canada, China, Hong Kong, Japan, and Taiwan.
         * Assumes that A+ is equivalent to 4.0.
         * Can also convert the 4.3 scale where A+ is equivalent to 4.3.
     * Letter grades.
