@@ -34,7 +34,7 @@ std::string convertIndia10(double grade, std::string gradeScale);
  * \param gradeScale The grade scale name.
  * \return The US letter grade equivalent.
  */
-std::string convertIndia10SABCDEFN(std::string input, std::string gradeScale);
+std::string convertIndia10VIT(std::string input, std::string gradeScale);
 
 /**
  * Convert the 100 point scale in use for India.

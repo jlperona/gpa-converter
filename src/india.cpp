@@ -54,7 +54,7 @@ std::string convertIndia10(double grade, std::string gradeScale)
     exit(EXIT_FAILURE);
 } // convertIndia10(double)
 
-std::string convertIndia10SABCDEFN(std::string input, std::string gradeScale)
+std::string convertIndia10VIT(std::string input, std::string gradeScale)
 {
     double grade = -1;
 
@@ -92,7 +92,7 @@ std::string convertIndia10SABCDEFN(std::string input, std::string gradeScale)
     }
 
     return convertIndia10(grade, gradeScale);
-} // convertIndia10SABCDEFN()
+} // convertIndia10VIT()
 
 std::string convertIndia100(std::string input, std::string gradeScale)
 {
