@@ -31,10 +31,10 @@ I use the secondary identifier to separate multiple transcripts for the same stu
 
 ## Grade Scales
 
-All grade scale conversions are credited to [ForeignCredits](http://www.foreigncredits.com/Resources/Grade-Conversion/).
+All grade scale conversions are credited to [Scholaro](https://www.scholaro.com/pro/Countries), previously *ForeignCredits*.
 The appropriate string below goes in the *Grade Scale Type* column for each student.
 
-The following grade scales have been implemented:
+The following grade scales have been implemented.
 
 ### Africa
 

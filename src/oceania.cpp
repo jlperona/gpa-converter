@@ -6,7 +6,7 @@
 
 std::string convertAustralia(std::string input, std::string gradeScale)
 {
-    /* Some of these grades are not in ForeignCredits' database.
+    /* Some of these grades are not in Scholaro's database.
      * They were taken from transcripts by the University of New South Wales. */
     if(input == "HD")
     {

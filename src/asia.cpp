@@ -434,7 +434,7 @@ std::string convertSingapore(std::string input, std::string gradeScale)
     {
         return "B";
     }
-    /* While ForeignCredits doesn't have this grade listed on their website,
+    /* While Scholaro doesn't have this grade listed on their website,
      * National University of Singapore uses it. */
     else if(input == "B-")
     {
@@ -448,7 +448,7 @@ std::string convertSingapore(std::string input, std::string gradeScale)
     {
         return "C";
     }
-    /* While ForeignCredits doesn't have this grade listed on their website,
+    /* While Scholaro doesn't have this grade listed on their website,
      * National University of Singapore uses it. */
     else if(input == "C-")
     {
@@ -462,7 +462,7 @@ std::string convertSingapore(std::string input, std::string gradeScale)
     {
         return "D";
     }
-    /* While ForeignCredits doesn't have this grade listed on their website,
+    /* While Scholaro doesn't have this grade listed on their website,
      * National University of Singapore uses it. */
     else if(input == "D-")
     {
@@ -619,7 +619,7 @@ std::string convertVietnam(std::string input, std::string gradeScale)
     else if(grade >= 0 && grade < 5)
     {
         /* Note that there's a carve-out for a D here, but exactly when this applies is unclear.
-         * ForeignCredits says "with an overall average grade of at least 5.0."
+         * Scholaro says "with an overall average grade of at least 5.0."
          * How this applies to one course isn't exactly clear, so assigning it to an F is safer. */
         return "F";
     }
