@@ -139,6 +139,9 @@ The following grade scales have been implemented.
 
 ### Europe
 
+* `Austria`
+    * Most common scale in Austria.
+    * Grades range from 1 - 5.
 * `Belgium`
     * Most common scale in Belgium.
     * Grades range from 0 - 20.

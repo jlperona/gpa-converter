@@ -4,6 +4,47 @@
 
 #include "europe.hpp"
 
+std::string convertAustria(std::string input, std::string gradeScale)
+{
+    double grade = -1;
+
+    try // attempt to convert to number
+    {
+        grade = std::stod(input);
+    }
+    catch(const std::invalid_argument &e)
+    {
+        throwInvalidGradeError(input, gradeScale);
+    } // invalid grade
+
+    if(grade >= 1 && grade < 2)
+    {
+        return "A";
+    }
+    else if(grade >= 2 && grade < 3)
+    {
+        return "A-";
+    }
+    else if(grade >= 3 && grade < 4)
+    {
+        return "B";
+    }
+    else if(grade >= 4 && grade < 5)
+    {
+        return "C";
+    }
+    else if(grade == 5)
+    {
+        return "F";
+    }
+    else // invalid
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    exit(EXIT_FAILURE);
+} // convertAustria()
+
 std::string convertBelgium(std::string input, std::string gradeScale)
 {
     double grade = -1;
