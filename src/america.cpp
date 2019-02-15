@@ -4,6 +4,30 @@
 
 #include "america.hpp"
 
+double convert4(std::string input, std::string gradeScale)
+{
+    double grade = -1;
+
+    try // attempt to convert to number
+    {
+        grade = std::stod(input);
+    }
+    catch(const std::invalid_argument &e)
+    {
+        throwInvalidGradeError(input, gradeScale);
+    } // invalid grade
+
+    if(grade < 0 || grade > 4.3)
+    {
+        throwInvalidGradeError(input, gradeScale);
+    } // invalid
+
+    // above 4.0 gets converted to 4.0, otherwise it returns the exact grade
+    double finalGrade = std::min(4.0, grade);
+
+    return finalGrade;
+} // convert4()
+
 std::string convertBrazil(std::string input, std::string gradeScale)
 {
     double grade = -1;

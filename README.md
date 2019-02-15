@@ -50,6 +50,12 @@ The following grade scales have been implemented.
 
 ### America
 
+* `4.0`
+    * 4.0 scale used in the United States.
+    * Also used in Brazil, Canada, China, Hong Kong, Japan, and Taiwan.
+        * Assumes that A+ is equivalent to 4.0.
+        * Can also convert the 4.3 scale where A+ is equivalent to 4.3.
+    * Numerical grades. For letter grades, see `United States` below.
 * `Brazil`
     * Most common grade scale in Brazil.
     * Grades range from 0 - 100.
@@ -81,7 +87,7 @@ The following grade scales have been implemented.
     * Also used in Brazil, Canada, China, Hong Kong, Japan, and Taiwan.
         * Assumes that A+ is equivalent to 4.0.
         * Can also convert the 4.3 scale where A+ is equivalent to 4.3.
-    * Letter grades.
+    * Letter grades. For numerical grades, see `4.0` above.
 
 ### Asia (excluding India)
 

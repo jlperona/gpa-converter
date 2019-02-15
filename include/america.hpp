@@ -7,8 +7,19 @@
 
 #include "conversion.hpp"
 
+#include <algorithm>
 #include <iostream>
 #include <string>
+
+/**
+ * Convert the scale in use for the United States.
+ * This converts numerical grades, and only checks if the grade is valid and within the bound.
+ * This scale directly returns the number of grade points and thus returns a double.
+ * \param input The input grade, expected to be 0 - 4.3.
+ * \param gradeScale The grade scale name.
+ * \return The number of grade points this class added.
+ */
+double convert4(std::string input, std::string gradeScale);
 
 /**
  * Convert the scale in use for Brazil.

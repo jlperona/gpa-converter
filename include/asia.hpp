@@ -32,7 +32,7 @@ std::string convertChina(std::string input, std::string gradeScale);
  * This scale directly returns the number of grade points and thus returns a double.
  * \param input The input grade, expected to be between 0 - 100.
  * \param gradeScale The grade scale name.
- * \return The US letter grade equivalent.
+ * \return The number of grade points this class added.
  */
 double convertChinaModified(std::string input, std::string gradeScale);
 
