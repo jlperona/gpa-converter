@@ -50,7 +50,7 @@ The following grade scales have been implemented.
 
 ### America
 
-* `4.0`
+* `4`
     * 4.0 scale used in the United States.
     * Also used in Brazil, Canada, China, Hong Kong, Japan, and Taiwan.
         * Assumes that A+ is equivalent to 4.0.

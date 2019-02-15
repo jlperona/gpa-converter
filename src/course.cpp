@@ -14,7 +14,7 @@ Course::Course(double unitsVal, std::string givenGradeVal, std::string scaleType
 
 void Course::convertToLetter()
 {
-    if(scaleType == "4.0")
+    if(scaleType == "4")
     {
         letterGradePoints = convert4(givenGrade, scaleType);
         return;
