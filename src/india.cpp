@@ -54,6 +54,50 @@ std::string convertIndia10(double grade, std::string gradeScale)
     exit(EXIT_FAILURE);
 } // convertIndia10(double)
 
+std::string convertIndia10BITS(std::string input, std::string gradeScale)
+{
+    double grade = -1;
+
+    if(input == "A")
+    {
+        grade = 10;
+    }
+    else if(input == "A-")
+    {
+        grade = 9;
+    }
+    else if(input == "B")
+    {
+        grade = 8;
+    }
+    else if(input == "B-")
+    {
+        grade = 7;
+    }
+    else if(input == "C")
+    {
+        grade = 6;
+    }
+    else if(input == "C-")
+    {
+        grade = 5;
+    }
+    else if(input == "D")
+    {
+        grade = 4;
+    }
+    else if(input == "E")
+    {
+        grade = 2;
+    }
+    else // invalid
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    return convertIndia10(grade, gradeScale);
+} // convertIndia10BITS()
+
 std::string convertIndia10VIT(std::string input, std::string gradeScale)
 {
     double grade = -1;

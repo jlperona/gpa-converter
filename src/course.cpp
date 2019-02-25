@@ -92,6 +92,10 @@ void Course::convertToLetter()
     {
         letterGrade = convertIndia10(givenGrade, scaleType);
     }
+    else if(scaleType == "India 10 BITS")
+    {
+        letterGrade = convertIndia10BITS(givenGrade, scaleType);
+    }
     else if(scaleType == "India 10 VIT")
     {
         letterGrade = convertIndia10VIT(givenGrade, scaleType);

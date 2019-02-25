@@ -233,23 +233,25 @@ Underneath each grade scale listed below is the university that utilizes it.
 
 * `India 10`
     * All universities that report numbers instead of a letter grade.
+* `India 10 BITS`
+    * BITS Pilani, among others.
 * `India 10 VIT`
     * VIT University, among others.
 
 The table below lists what each letter in each scale corresponds to.
 
-| Scale | VIT  |
-|-------|------|
-| 10    | S    |
-| 9     | A    |
-| 8     | B    |
-| 7     | C    |
-| 6     | D    |
-| 5     | E    |
-| 4     |      |
-| 3     |      |
-| 2     |      |
-| 1     | F, N |
+| Scale | VIT  | BITS |
+|-------|------|------|
+| 10    | S    | A    |
+| 9     | A    | A-   |
+| 8     | B    | B    |
+| 7     | C    | B-   |
+| 6     | D    | C    |
+| 5     | E    | C-   |
+| 4     |      | D    |
+| 3     |      |      |
+| 2     |      | E    |
+| 1     | F, N |      |
 
 ## Motivation
 
