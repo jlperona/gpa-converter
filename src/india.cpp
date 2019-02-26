@@ -98,6 +98,50 @@ std::string convertBITSPilani(std::string input, std::string gradeScale)
     return convertIndia10(grade, gradeScale);
 } // convertBITSPilani()
 
+std::string convertNITKarnataka(std::string input, std::string gradeScale)
+{
+    double grade = -1;
+
+    if(input == "AA")
+    {
+        grade = 10;
+    }
+    else if(input == "AB")
+    {
+        grade = 9;
+    }
+    else if(input == "BB")
+    {
+        grade = 8;
+    }
+    else if(input == "BC")
+    {
+        grade = 7;
+    }
+    else if(input == "CC")
+    {
+        grade = 6;
+    }
+    else if(input == "CD")
+    {
+        grade = 5;
+    }
+    else if(input == "DD")
+    {
+        grade = 4;
+    }
+    else if(input == "FF" || input == "FA")
+    {
+        grade = 0;
+    }
+    else // invalid
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    return convertIndia10(grade, gradeScale);
+} // convertNITKarnataka()
+
 std::string convertVIT(std::string input, std::string gradeScale)
 {
     double grade = -1;

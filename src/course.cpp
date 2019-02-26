@@ -136,6 +136,10 @@ void Course::convertToLetter()
     {
         letterGrade = convertNigeria(givenGrade, scaleType);
     }
+    else if(scaleType == "NIT Karnataka")
+    {
+        letterGrade = convertNITKarnataka(givenGrade, scaleType);
+    }
     else if(scaleType == "Peru")
     {
         letterGrade = convertPeru(givenGrade, scaleType);

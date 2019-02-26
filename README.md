@@ -235,23 +235,25 @@ Underneath each grade scale listed below is the university that utilizes it.
     * All universities that report numbers instead of a letter grade.
 * `BITS Pilani`
     * Birla Institute of Technology and Science, Pilani.
+* `NIT Karnataka`
+    * National Institute of Technology Karnataka, Surathkal.
 * `VIT`
     * VIT University.
 
 The table below lists what each letter in each scale corresponds to.
 
-| Scale | BITS Pilani | VIT  |
-|-------|-------------|------|
-|   10  |      A      |  S   |
-|   9   |      A-     |  A   |
-|   8   |      B      |  B   |
-|   7   |      B-     |  C   |
-|   6   |      C      |  D   |
-|   5   |      C-     |  E   |
-|   4   |      D      |      |
-|   3   |             |      |
-|   2   |      E      |      |
-|   1   |             | F, N |
+| Scale | BITS Pilani | NIT Karnataka | VIT  |
+|-------|-------------|---------------|------|
+|   10  |      A      |      AA       |  S   |
+|   9   |      A-     |      AB       |  A   |
+|   8   |      B      |      BB       |  B   |
+|   7   |      B-     |      BC       |  C   |
+|   6   |      C      |      CC       |  D   |
+|   5   |      C-     |      CD       |  E   |
+|   4   |      D      |      DD       |      |
+|   3   |             |               |      |
+|   2   |      E      |               |      |
+|   1   |             |    FF, FA     | F, N |
 
 ## Motivation
 
