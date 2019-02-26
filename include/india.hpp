@@ -34,7 +34,7 @@ std::string convertIndia10(double grade, std::string gradeScale);
  * \param gradeScale The grade scale name.
  * \return The US letter grade equivalent.
  */
-std::string convertIndia10BITS(std::string input, std::string gradeScale);
+std::string convertBITSPilani(std::string input, std::string gradeScale);
 
 /**
  * Convert a 10 point scale in use at VIT University in India, among others.
@@ -42,7 +42,7 @@ std::string convertIndia10BITS(std::string input, std::string gradeScale);
  * \param gradeScale The grade scale name.
  * \return The US letter grade equivalent.
  */
-std::string convertIndia10VIT(std::string input, std::string gradeScale);
+std::string convertVIT(std::string input, std::string gradeScale);
 
 /**
  * Convert the 100 point scale in use for India.

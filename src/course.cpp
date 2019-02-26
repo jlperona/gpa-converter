@@ -39,6 +39,10 @@ void Course::convertToLetter()
     {
         letterGrade = convertBelgium(givenGrade, scaleType);
     }
+    else if(scaleType == "BITS Pilani")
+    {
+        letterGrade = convertBITSPilani(givenGrade, scaleType);
+    }
     else if(scaleType == "Bulgaria")
     {
         letterGrade = convertBulgaria(givenGrade, scaleType);
@@ -91,14 +95,6 @@ void Course::convertToLetter()
     else if(scaleType == "India 10")
     {
         letterGrade = convertIndia10(givenGrade, scaleType);
-    }
-    else if(scaleType == "India 10 BITS")
-    {
-        letterGrade = convertIndia10BITS(givenGrade, scaleType);
-    }
-    else if(scaleType == "India 10 VIT")
-    {
-        letterGrade = convertIndia10VIT(givenGrade, scaleType);
     }
     else if(scaleType == "India 100")
     {
@@ -211,6 +207,10 @@ void Course::convertToLetter()
     else if(scaleType == "Vietnam")
     {
         letterGrade = convertVietnam(givenGrade, scaleType);
+    }
+    else if(scaleType == "VIT")
+    {
+        letterGrade = convertVIT(givenGrade, scaleType);
     }
     else
     {

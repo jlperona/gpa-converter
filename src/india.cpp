@@ -54,7 +54,7 @@ std::string convertIndia10(double grade, std::string gradeScale)
     exit(EXIT_FAILURE);
 } // convertIndia10(double)
 
-std::string convertIndia10BITS(std::string input, std::string gradeScale)
+std::string convertBITSPilani(std::string input, std::string gradeScale)
 {
     double grade = -1;
 
@@ -96,9 +96,9 @@ std::string convertIndia10BITS(std::string input, std::string gradeScale)
     }
 
     return convertIndia10(grade, gradeScale);
-} // convertIndia10BITS()
+} // convertBITSPilani()
 
-std::string convertIndia10VIT(std::string input, std::string gradeScale)
+std::string convertVIT(std::string input, std::string gradeScale)
 {
     double grade = -1;
 
@@ -136,7 +136,7 @@ std::string convertIndia10VIT(std::string input, std::string gradeScale)
     }
 
     return convertIndia10(grade, gradeScale);
-} // convertIndia10VIT()
+} // convertVIT()
 
 std::string convertIndia100(std::string input, std::string gradeScale)
 {
