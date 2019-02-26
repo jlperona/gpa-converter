@@ -32,7 +32,6 @@
 *.sh
 bin/
 obj/
-data/
 doc/
 core
 *.txt

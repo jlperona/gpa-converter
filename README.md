@@ -230,6 +230,7 @@ The Indian 10 point scale (`India 10` above) is somewhat unique, in that many un
 Typing in letter grades is easier than doing the conversion manually, so there are grade scales that support each university's specific letter grades.
 
 Underneath each grade scale listed below is the university that utilizes it.
+Each university should have a separate grade scale.
 
 * `India 10`
     * All universities that report numbers instead of a letter grade.
@@ -240,20 +241,9 @@ Underneath each grade scale listed below is the university that utilizes it.
 * `VIT`
     * VIT University.
 
-The table below lists what each letter in each scale corresponds to.
-
-| Scale | BITS Pilani | NIT Karnataka | VIT  |
-|-------|-------------|---------------|------|
-|   10  |      A      |      AA       |  S   |
-|   9   |      A-     |      AB       |  A   |
-|   8   |      B      |      BB       |  B   |
-|   7   |      B-     |      BC       |  C   |
-|   6   |      C      |      CC       |  D   |
-|   5   |      C-     |      CD       |  E   |
-|   4   |      D      |      DD       |      |
-|   3   |             |               |      |
-|   2   |      E      |               |      |
-|   1   |             |    FF, FA     | F, N |
+The file `india10.csv` contains the translations from letter grades to the 10 point scale for universities that I've encountered.
+Eventually, the code will be refactored to use the grade scales from this file.
+For right now, the universities above are the only ones that have unique grade scales.
 
 ## Motivation
 
