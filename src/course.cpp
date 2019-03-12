@@ -19,6 +19,10 @@ void Course::convertToLetter()
         letterGradePoints = convert4(givenGrade, scaleType);
         return;
     }
+    else if(scaleType == "Argentina")
+    {
+        letterGrade = convertArgentina(givenGrade, scaleType);
+    }
     else if(scaleType == "Australia")
     {
         letterGrade = convertAustralia(givenGrade, scaleType);

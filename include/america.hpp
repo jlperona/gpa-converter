@@ -22,6 +22,14 @@
 double convert4(std::string input, std::string gradeScale);
 
 /**
+ * Convert the scale in use for Argentina.
+ * \param input The input grade, expected to be between 0 - 10.
+ * \param gradeScale The grade scale name.
+ * \return The US letter grade equivalent.
+ */
+std::string convertArgentina(std::string input, std::string gradeScale);
+
+/**
  * Convert the scale in use for Brazil.
  * \param input The input grade.
  * \param gradeScale The grade scale name.
