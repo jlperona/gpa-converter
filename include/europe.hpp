@@ -83,6 +83,14 @@ std::string convertGreece(std::string input, std::string gradeScale);
 std::string convertIreland(std::string input, std::string gradeScale);
 
 /**
+ * Convert the scale in use for Italy.
+ * \param input The input grade, expected to be between 0 - 30.
+ * \param gradeScale The grade scale name.
+ * \return The US letter grade equivalent.
+ */
+std::string convertItaly(std::string input, std::string gradeScale);
+
+/**
  * Convert the scale in use for the Netherlands.
  * \param input The input grade, expected to be between 0 - 12 or -3.
  * \param gradeScale The grade scale name.

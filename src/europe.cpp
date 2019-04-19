@@ -379,6 +379,51 @@ std::string convertIreland(std::string input, std::string gradeScale)
     exit(EXIT_FAILURE);
 } // convertIreland()
 
+std::string convertItaly(std::string input, std::string gradeScale)
+{
+    double grade = -1;
+
+    try // attempt to convert to number
+    {
+        grade = std::stod(input);
+    }
+    catch(const std::invalid_argument &e)
+    {
+        throwInvalidGradeError(input, gradeScale);
+    } // invalid grade
+
+    if(grade >= 29 && grade <= 30)
+    {
+        return "A+";
+    }
+    else if(grade >= 27 && grade < 29)
+    {
+        return "A";
+    }
+    else if(grade >= 24 && grade < 27)
+    {
+        return "B";
+    }
+    else if(grade >= 19 && grade < 24)
+    {
+        return "C";
+    }
+    else if(grade >= 18 && grade < 19)
+    {
+        return "D";
+    }
+    else if(grade >= 0 && grade < 18)
+    {
+        return "F";
+    }
+    else // invalid
+    {
+        throwInvalidGradeError(input, gradeScale);
+    }
+
+    exit(EXIT_FAILURE);
+} // convertItaly()
+
 std::string convertNetherlands(std::string input, std::string gradeScale)
 {
     double grade = -1;
