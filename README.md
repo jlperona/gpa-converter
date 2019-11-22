@@ -1,5 +1,8 @@
 # gpa-converter
 
+**This program has been abandoned.
+See [jlperona/pygpa-converter](https://github.com/jlperona/pygpa-converter) for a maintained version with more features.**
+
 A C++ program to take in student transcript data via CSV format, and convert it to a final GPA in the United States' 4.0 grading scale.
 
 ## Build
@@ -180,7 +183,7 @@ The following grade scales have been implemented.
     * Grades range from 0 - 30.
 * `Netherlands`
     * Most common scale in the Netherlands.
-    * Grades range from 0 - 12 or -3.
+    * Grades range from 1 - 10.
 * `Romania`
     * Most common scale in Romania.
     * Grades range from 0 - 10.
